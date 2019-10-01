@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 455074041}
   m_Layer: 10
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,8 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49ad9933b8d7a14ab1ba94570979680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4
+  Speed: 5
+  jumpForce: 350
   body: {fileID: 648118961}
+  anim: {fileID: 648118964}
 --- !u!212 &648118963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -484,7 +486,7 @@ Animator:
   m_GameObject: {fileID: 648118958}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e5cf12896f3df004fb4dc15cf16517af, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9d2c3d7e6a3196842b7d33fee911af04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -769,7 +771,7 @@ GameObject:
   - component: {fileID: 1083819197}
   m_Layer: 10
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
