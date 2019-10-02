@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public Animator anim;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             IsJumping = true;
             anim.SetBool("IsJumping", true);
             body.AddForce(new Vector2(body.velocity.x, jumpForce));
-            
+            Invoke("Delay", 0.2f);
         }
         else
         {
