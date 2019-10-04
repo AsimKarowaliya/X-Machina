@@ -36,4 +36,17 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
     }
+    /**void OnTriggerEnter2D(Collider2D coll)
+    {
+        //Debug.Log(gameObject.name);
+
+        if (coll.CompareTag("Player"))
+        {
+            //Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            //Destroy(gameObject);
+            HealthSystem SN = coll.GetComponent<HealthSystem>();
+            SN.playerHealth -= 1;
+        }
+
+    }***/
 }
