@@ -51,6 +51,14 @@ public class HealthSystem : MonoBehaviour
             }
         }
 
+        if(playerHealth == 0)
+        {
+            Destroy(gameObject);
+            //Death effect
+            //Invoke end screen function after few seconds 
+            
+        }
+
     }
 
 }

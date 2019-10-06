@@ -13,7 +13,9 @@ public class EnemyMech : MonoBehaviour
     public int Damage = 1;
     public Transform firePoint;
     public GameObject Bullet;
-    private float InstantiationTimer = 2f;
+    public float timebetweenattack;
+    public float startTime;
+    public float distance;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +25,34 @@ public class EnemyMech : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         // rb.MovePosition(rb.position + Vector2.left *speed* Time.deltaTime);
         if (aiPath1.desiredVelocity.x >= 0.01f && aiPath1.desiredVelocity.x<5f)
         {
             transform.localScale = new Vector3(-2f, 2f, 2f);
-            
-            Shoot();
+            if(timebetweenattack <= 0)
+            {
+                timebetweenattack = startTime;
+                Shoot();
+            }
+            else
+            {
+                timebetweenattack -= Time.deltaTime;
+            }
+           
         }
         else if (aiPath1.desiredVelocity.x <= -0.01f && aiPath1.desiredVelocity.x > -5f)
         {
             transform.localScale = new Vector3(2f, 2f, 2f);
-            Shoot();
+            if (timebetweenattack <= 0)
+            {
+                timebetweenattack = startTime;
+                Shoot();
+            }
+            else
+            {
+                timebetweenattack -= Time.deltaTime;
+            }
         }
         
         if (health <= 0)
@@ -42,24 +60,41 @@ public class EnemyMech : MonoBehaviour
             Die();
         }
     }
+    //void Shoot()
+    //{
+    //    InstantiationTimer -= Time.deltaTime;
+    //    RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, firePoint.right);
+
+    //    if (hitinfo)
+    //    {
+    //        Player player = hitinfo.transform.GetComponent<Player>();
+    //        if (player != null)
+    //        {
+    //            HealthSystem health = GetComponent<HealthSystem>();
+
+    //            health.playerHealth -= 1;
+    //        }
+    //        if(InstantiationTimer <= 0)
+    //        {
+    //            Instantiate(Bullet, firePoint.position, firePoint.rotation);
+    //            InstantiationTimer = 2f;
+    //        }
+           
+    //    }
+    //}
     void Shoot()
     {
-        InstantiationTimer -= Time.deltaTime;
-        RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, firePoint.right);
-
-        if (hitinfo)
+        
+        RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, Vector2.left, distance);
+       
+        if (hitinfo.collider == true)
         {
-            Player player = hitinfo.transform.GetComponent<Player>();
-            if (player != null)
-            {
-                //player.TakeDamage();
-            }
-            if(InstantiationTimer <= 0)
+            if (hitinfo.transform.CompareTag("Player"))
             {
                 Instantiate(Bullet, firePoint.position, firePoint.rotation);
-                InstantiationTimer = 2f;
+
+              
             }
-           
         }
     }
     public void TakeDamage(int damage)

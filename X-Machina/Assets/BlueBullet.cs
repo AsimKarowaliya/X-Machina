@@ -11,10 +11,11 @@ public class BlueBullet : MonoBehaviour
     public Rigidbody2D rb;
     public int Damage;
     public GameObject impactEffect;
+
     // Start is called before the first frame update
     void Start()
     {
-        transform.Rotate(0f,180f, 0f);
+        transform.Rotate(0f, 180f, 0f);
         rb.velocity = transform.right * speed;
         other = GameObject.FindGameObjectWithTag("Flash");
 
@@ -24,17 +25,20 @@ public class BlueBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // use this to kill the Player
-    //void OnTriggerEnter2D(Collider2D hitInfo)
-    //{
-    //    Player PLAYER = hitInfo.GetComponent<Player>();
-    //    if (PLAYER != null)
-    //    {
-    //        PLAYER.TakeDamage(Damage);
-    //    }
-    //    Instantiate(impactEffect, transform.position, transform.rotation);
-    //    Destroy(gameObject);
-    //    Destroy(other);
-    //}
+
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        if (hitInfo.CompareTag("Player"))
+        {
+            HealthSystem health = hitInfo.GetComponent<HealthSystem>();
+
+            health.playerHealth -= 1;
+        }
+        Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+        Destroy(other);
+    }
 
 }
