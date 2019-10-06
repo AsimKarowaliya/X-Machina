@@ -25,12 +25,12 @@ public class EnemyMech : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // rb.MovePosition(rb.position + Vector2.left *speed* Time.deltaTime);
-        if (aiPath1.desiredVelocity.x >= 0.01f && aiPath1.desiredVelocity.x<5f)
+        if (aiPath1.desiredVelocity.x >= 0.01f && aiPath1.desiredVelocity.x < 5f)
         {
             transform.localScale = new Vector3(-2f, 2f, 2f);
-            if(timebetweenattack <= 0)
+            if (timebetweenattack <= 0)
             {
                 timebetweenattack = startTime;
                 Shoot();
@@ -39,7 +39,7 @@ public class EnemyMech : MonoBehaviour
             {
                 timebetweenattack -= Time.deltaTime;
             }
-           
+
         }
         else if (aiPath1.desiredVelocity.x <= -0.01f && aiPath1.desiredVelocity.x > -5f)
         {
@@ -54,7 +54,7 @@ public class EnemyMech : MonoBehaviour
                 timebetweenattack -= Time.deltaTime;
             }
         }
-        
+
         if (health <= 0)
         {
             Die();
@@ -79,21 +79,21 @@ public class EnemyMech : MonoBehaviour
     //            Instantiate(Bullet, firePoint.position, firePoint.rotation);
     //            InstantiationTimer = 2f;
     //        }
-           
+
     //    }
     //}
     void Shoot()
     {
-        
+
         RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, Vector2.left, distance);
-       
+
         if (hitinfo.collider == true)
         {
             if (hitinfo.transform.CompareTag("Player"))
             {
                 Instantiate(Bullet, firePoint.position, firePoint.rotation);
 
-              
+
             }
         }
     }
@@ -128,3 +128,4 @@ public class EnemyMech : MonoBehaviour
 
     }
 }
+
