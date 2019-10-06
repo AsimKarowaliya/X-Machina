@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     public AIPath aiPath;
+    public GameObject deathEffect;
+    public int Damage=1;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +31,22 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
     }
-    /**void OnTriggerEnter2D(Collider2D coll)
+
+    void Die()
+    {
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+   
+    /*void OnTriggerEnter2D(Collider2D coll)
     {
         //Debug.Log(gameObject.name);
 
