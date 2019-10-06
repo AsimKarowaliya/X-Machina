@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
+    private GameObject other;
     public Rigidbody2D rb;
     public int Damage;
     public GameObject impactEffect;
@@ -12,6 +13,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+        other = GameObject.FindGameObjectWithTag("Flash");
+        
     }
     void OnBecameInvisible()
     {
@@ -28,6 +31,7 @@ public class Bullet : MonoBehaviour
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        Destroy(other);
     }
     
 }

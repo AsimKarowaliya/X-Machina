@@ -17,12 +17,18 @@ public class HealthSystem : MonoBehaviour
     void Update()
     {
 
-        if(playerHealth > numOfHearts)
+        if (playerHealth > numOfHearts)
         {
             playerHealth = numOfHearts;
+
         }
 
-
+        /** if (//if player health changes from previous health then){
+                     
+                  GetComponent<SpriteRenderer>().color = Color.red;
+             Invoke("ResetMat", 0.2f);
+            
+                 }**/
 
         for (int i = 0; i < hearts.Length; i++)
         {

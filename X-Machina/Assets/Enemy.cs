@@ -45,18 +45,23 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-   
-    /*void OnTriggerEnter2D(Collider2D coll)
+    void ResetMat()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    void OnTriggerEnter2D(Collider2D coll)
     {
         //Debug.Log(gameObject.name);
 
-        if (coll.CompareTag("Player"))
+        if (coll.CompareTag("Bullet"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
-            HealthSystem SN = coll.GetComponent<HealthSystem>();
-            SN.playerHealth -= 1;
+            GetComponent<SpriteRenderer>().color = Color.red;
+            Invoke("ResetMat", 0.05f);
+            // HealthSystem SN = coll.GetComponent<HealthSystem>();
+            // SN.playerHealth -= 1;
         }
 
-    }***/
+    }
 }
