@@ -3080,6 +3080,9 @@ MonoBehaviour:
   speed: 1
   distance: 0.08
   target: {fileID: 1372979306}
+  health: 20
+  deathEffect: {fileID: 6997091498894477439, guid: 3d4409a8308742a439410c3369f5f6e5,
+    type: 3}
 --- !u!61 &1494894772
 BoxCollider2D:
   m_ObjectHideFlags: 0
