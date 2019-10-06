@@ -25,9 +25,15 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if(enemy !=null)
+        EnemyMech enemyMech= hitInfo.GetComponent<EnemyMech>();
+        if (enemy !=null)
         {
             enemy.TakeDamage(Damage);
+            
+        }
+        else if(enemyMech != null)
+        {
+            enemyMech.TakeDamage(Damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);

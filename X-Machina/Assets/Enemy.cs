@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     public AIPath aiPath;
     public GameObject deathEffect;
     public int Damage=1;
-    public Transform firePoint;
-    public GameObject Bullet;
+    //public Transform firePoint;
+    //public GameObject Bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,27 +31,27 @@ public class Enemy : MonoBehaviour
         {
             transform.localScale = new Vector3(3f,3f, 3f);
         }
-        Shoot();
+        //Shoot();
         if (health <= 0)
         {
             Die();
         }
     }
-    void Shoot()
-    {
-      RaycastHit2D hitinfo =  Physics2D.Raycast(firePoint.position, firePoint.right);
+    //void Shoot()
+    //{
+    //    RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, firePoint.right);
 
-        if (hitinfo)
-        {
-           Player player = hitinfo.transform.GetComponent<Player>();
-            if(player != null)
-            {
-                //player.TakeDamage();
-            }
+    //    if (hitinfo)
+    //    {
+    //        Player player = hitinfo.transform.GetComponent<Player>();
+    //        if (player != null)
+    //        {
+    //            //player.TakeDamage();
+    //        }
 
-            Instantiate(Bullet, firePoint.position, firePoint.rotation);
-        }
-    }
+    //        Instantiate(Bullet, firePoint.position, firePoint.rotation);
+    //    }
+    //}
     public void TakeDamage(int damage)
     {
         health -= damage;
