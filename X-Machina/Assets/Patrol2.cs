@@ -35,7 +35,7 @@ public class Patrol2 : MonoBehaviour
                 timebetweenattack -= Time.deltaTime;
             }
 
-            
+            speed = 0;
             if (!hitinfo2.transform.CompareTag("Player"))
             {
                 speed = 1;
