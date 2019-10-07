@@ -36,20 +36,20 @@ public class MeleeScript : MonoBehaviour
             Die();
         }
 
-        RaycastHit2D wallinfo = Physics2D.Raycast(target.position, Vector2.left, distance);
-        if (wallinfo.collider == true && wallinfo.transform.gameObject.tag != "Player")
-        {
-            if (goingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                goingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                goingRight = true;
-            }
-        }
+        //RaycastHit2D wallinfo = Physics2D.Raycast(target.position, Vector2.left, distance);
+        //if (wallinfo.collider == true && wallinfo.transform.gameObject.tag != "Player")
+        //{
+        //    if (goingRight == true)
+        //    {
+        //        transform.eulerAngles = new Vector3(0, -180, 0);
+        //        goingRight = false;
+        //    }
+        //    else
+        //    {
+        //        transform.eulerAngles = new Vector3(0, 0, 0);
+        //        goingRight = true;
+        //    }
+        //}
     }
     public void TakeDamage(int damage)
     {
