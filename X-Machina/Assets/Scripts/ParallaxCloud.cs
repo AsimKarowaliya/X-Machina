@@ -19,30 +19,20 @@ public class ParallaxCloud : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float temp = (cam.transform.position.x * (1 - parallaxEffect));
         float dist = (cam.transform.position.x * parallaxEffect);
-        //float dist = (Input.GetAxis("Horizontal") * parallaxEffect);
 
-        //startpos = cam.transform.position.x + Camera.main.orthographicSize;
 
-        //transform.position = new Vector3(startpos, transform.position.y, transform.position.z);
-
-        if ((transform.position.x ) < (cam.transform.position.x - Camera.main.orthographicSize * 3))
+        if ((transform.position.x) < (cam.transform.position.x - Camera.main.orthographicSize * 3))
         {
-            startpos = cam.transform.position.x + Camera.main.orthographicSize * 3;
+            transform.position = new Vector3(cam.transform.position.x + Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
+            return;
         }
 
         else if ((transform.position.x) > (cam.transform.position.x + Camera.main.orthographicSize * 3))
         {
-            startpos = cam.transform.position.x - Camera.main.orthographicSize * 3;
+            transform.position = new Vector3(cam.transform.position.x - Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
+            return;
         }
-        transform.position = new Vector3(startpos, transform.position.y, transform.position.z);
-
-        //startpos = cam.transform.position.x;
-        //if (temp < startpos - length)
-        //{
-        //    startpos = cam.transform.position.x;
-        //}
-
+        //else transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
     }
 }
