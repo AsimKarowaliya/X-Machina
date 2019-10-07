@@ -24,10 +24,14 @@ public class BlueBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    void ResetMat()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        
 
         if (hitInfo.CompareTag("Player"))
         {

@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Flash
   - Heart
+  - BlueBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
