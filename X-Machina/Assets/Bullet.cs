@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         Patrol2 enemyMech= hitInfo.GetComponent<Patrol2>();
         MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
         flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
+        GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
         if (enemy !=null)
         {
             enemy.TakeDamage(Damage);
@@ -44,6 +45,10 @@ public class Bullet : MonoBehaviour
         else if (enemyfly != null)
         {
             enemyfly.TakeDamage(Damage);
+        }
+        else if(groundMech != null)
+        {
+            groundMech.TakeDamage(Damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);

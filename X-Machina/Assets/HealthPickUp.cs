@@ -6,7 +6,7 @@ public class HealthPickUp : MonoBehaviour
 {
     HealthSystem healthPickup;
     Player player;
-     void Awake()
+    void Awake()
     {
         healthPickup = FindObjectOfType<HealthSystem>();
         player = FindObjectOfType<Player>();
@@ -14,10 +14,15 @@ public class HealthPickUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(healthPickup.playerHealth < 3)
+        if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            healthPickup.playerHealth += 1;
+            if (healthPickup.playerHealth < 3)
+            {
+                Destroy(gameObject);
+                healthPickup.playerHealth += 1;
+            }
         }
+
     }
+
 }
