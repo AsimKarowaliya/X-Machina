@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 180432612}
   - component: {fileID: 180432613}
   - component: {fileID: 180432614}
+  - component: {fileID: 180432615}
   m_Layer: 0
   m_Name: cloud6
   m_TagString: Untagged
@@ -694,13 +695,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180432611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &180432615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180432611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 27.5
 --- !u!1 &197023382
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +831,7 @@ GameObject:
   - component: {fileID: 197455627}
   - component: {fileID: 197455628}
   - component: {fileID: 197455629}
+  - component: {fileID: 197455630}
   m_Layer: 0
   m_Name: cloud7
   m_TagString: Untagged
@@ -892,13 +909,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197455626}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &197455630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197455626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 24.1
 --- !u!1 &239591366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2735,7 @@ GameObject:
   - component: {fileID: 1094636849}
   - component: {fileID: 1094636850}
   - component: {fileID: 1094636851}
+  - component: {fileID: 1094636852}
   m_Layer: 0
   m_Name: cloud5
   m_TagString: Untagged
@@ -2780,13 +2813,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094636848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &1094636852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094636848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 26
 --- !u!1 &1130426416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3070,7 @@ GameObject:
   - component: {fileID: 1194693124}
   - component: {fileID: 1194693125}
   - component: {fileID: 1194693126}
+  - component: {fileID: 1194693127}
   m_Layer: 0
   m_Name: cloud8
   m_TagString: Untagged
@@ -3099,13 +3148,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194693123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &1194693127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194693123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 20.6
 --- !u!1 &1207397011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,6 +3630,7 @@ GameObject:
   - component: {fileID: 1484720886}
   - component: {fileID: 1484720887}
   - component: {fileID: 1484720888}
+  - component: {fileID: 1484720889}
   m_Layer: 0
   m_Name: cloud2
   m_TagString: Untagged
@@ -3643,13 +3708,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484720885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &1484720889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484720885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 23.9
 --- !u!1 &1494894764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,6 +4079,7 @@ GameObject:
   - component: {fileID: 1534584389}
   - component: {fileID: 1534584390}
   - component: {fileID: 1534584391}
+  - component: {fileID: 1534584392}
   m_Layer: 0
   m_Name: cloud4
   m_TagString: Untagged
@@ -4076,13 +4157,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534584388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &1534584392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534584388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 18.1
 --- !u!1 &1536922563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,6 +5159,7 @@ GameObject:
   - component: {fileID: 1774030905}
   - component: {fileID: 1774030906}
   - component: {fileID: 1774030907}
+  - component: {fileID: 1774030908}
   m_Layer: 0
   m_Name: cloud1
   m_TagString: Untagged
@@ -5140,13 +5237,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774030904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &1774030908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774030904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 19.26
 --- !u!1 &1793396049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,6 +6065,7 @@ GameObject:
   - component: {fileID: 2000358312}
   - component: {fileID: 2000358313}
   - component: {fileID: 2000358314}
+  - component: {fileID: 2000358315}
   m_Layer: 0
   m_Name: cloud3
   m_TagString: Untagged
@@ -6030,13 +6143,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000358311}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efb4e5ea9fa5f14db832ad740aa1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2118302715}
   parallaxEffect: 0.4
+--- !u!114 &2000358315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000358311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0853497f579955458177db3ee58f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraPosition: {fileID: 2118302718}
+  backgroundMoveSpeed: 2
+  offsetByX: 21.1
 --- !u!1 &2008687979
 GameObject:
   m_ObjectHideFlags: 0
