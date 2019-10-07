@@ -6126,7 +6126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863bc4684c487e746b2fdc348e54c936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 2118302715}
   parallaxEffect: 0
 --- !u!212 &1777846836
 SpriteRenderer:
