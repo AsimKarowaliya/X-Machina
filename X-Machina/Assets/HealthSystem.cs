@@ -53,7 +53,7 @@ public class HealthSystem : MonoBehaviour
 
         if(playerHealth == 0)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             Time.timeScale = 0;
             gameoverMenu.SetActive(true);
             //Death effect
