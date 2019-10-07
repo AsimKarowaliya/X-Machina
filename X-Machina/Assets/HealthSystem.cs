@@ -13,7 +13,7 @@ public class HealthSystem : MonoBehaviour
     public Sprite fullHearts;
     public Sprite emptyHearts;
 
-
+    public GameObject gameoverMenu;
     void Update()
     {
 
@@ -54,6 +54,8 @@ public class HealthSystem : MonoBehaviour
         if(playerHealth == 0)
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
+            gameoverMenu.SetActive(true);
             //Death effect
             //Invoke end screen function after few seconds 
             
