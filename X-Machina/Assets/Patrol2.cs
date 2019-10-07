@@ -28,6 +28,7 @@ public class Patrol2 : MonoBehaviour
             if (timebetweenattack <= 0)
             {
                 timebetweenattack = startTime;
+            
                 Shoot();
             }
             else
@@ -121,7 +122,12 @@ public class Patrol2 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         //Debug.Log(gameObject.name);
+        if (coll.CompareTag("Player"))
+        {
+            HealthSystem health = coll.GetComponent<HealthSystem>();
 
+            health.playerHealth -= 1;
+        }
         if (coll.CompareTag("Bullet"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
