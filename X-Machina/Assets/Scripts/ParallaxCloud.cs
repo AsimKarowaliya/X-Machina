@@ -25,14 +25,11 @@ public class ParallaxCloud : MonoBehaviour
         if ((transform.position.x) < (cam.transform.position.x - Camera.main.orthographicSize * 3))
         {
             transform.position = new Vector3(cam.transform.position.x + Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
-            return;
         }
 
         else if ((transform.position.x) > (cam.transform.position.x + Camera.main.orthographicSize * 3))
         {
             transform.position = new Vector3(cam.transform.position.x - Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
-            return;
         }
-        //else transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
     }
 }
