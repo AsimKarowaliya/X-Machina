@@ -51,7 +51,7 @@ public class HealthSystem : MonoBehaviour
             }
         }
 
-        if(playerHealth == 0)
+        if(playerHealth <= 0)
         {
             Destroy(gameObject);
             Time.timeScale = 0;
