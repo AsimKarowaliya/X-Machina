@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class Exit : MonoBehaviour
+public class ExitToMenu : MonoBehaviour
 {
-    public void ExitNow()
+    public void OnClick()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }
