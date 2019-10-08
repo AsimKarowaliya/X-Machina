@@ -9,5 +9,6 @@ public class PlayMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
+        AmmoText.ammoAmount = 100;
     }
 }
