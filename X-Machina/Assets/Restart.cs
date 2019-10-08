@@ -11,7 +11,7 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
         Time.timeScale = 1;
-        AmmoText.ammoAmount = 50;
+        AmmoText.ammoAmount = 100;
     }
    
    
