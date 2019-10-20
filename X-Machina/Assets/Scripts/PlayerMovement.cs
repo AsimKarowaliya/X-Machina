@@ -18,7 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     bool jump = false;
 
+    int playerLayer, platformLayer;
+    bool jumpOffCoroutineIsRunning = false;
+
     //bool crouch = false;
+
+    void Start()
+    {
+        playerLayer = LayerMask.NameToLayer("Player");
+        platformLayer = LayerMask.NameToLayer("Platform");
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,12 +43,16 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !Input.GetKey(KeyCode.S))
         {
             jump = true;
             animator.SetBool("IsJumping", true);
         }
 
+        if (Input.GetButtonDown("Jump") && Input.GetKey(KeyCode.S))
+        {
+            StartCoroutine("JumpOff");
+        }
 
         /**
          if(Input.GetButtonDown("Crouch"))
@@ -61,4 +74,12 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
     }
 
+    IEnumerator JumpOff()
+    {
+        jumpOffCoroutineIsRunning = true;
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
+        yield return new WaitForSeconds(0.3f);
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
+        jumpOffCoroutineIsRunning = false;
+    }
 }
