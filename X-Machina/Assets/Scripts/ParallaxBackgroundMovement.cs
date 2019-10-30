@@ -18,7 +18,7 @@ public class ParallaxBackgroundMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        directionX = Input.GetAxis("Horizontal") * backgroundMoveSpeed * Time.deltaTime;
+        directionX = Input.GetAxis("Horizontal") * Time.deltaTime;
 
         transform.position = new Vector3(transform.position.x + directionX, transform.position.y, 
             transform.position.z);

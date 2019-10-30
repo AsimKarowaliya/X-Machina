@@ -22,14 +22,14 @@ public class ParallaxCloud : MonoBehaviour
         float dist = (cam.transform.position.x * parallaxEffect);
 
 
-        if ((transform.position.x) < (cam.transform.position.x - Camera.main.orthographicSize * 3))
+        if ((transform.position.x) < (cam.transform.position.x - Camera.main.orthographicSize * 5))
         {
-            transform.position = new Vector3(cam.transform.position.x + Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
+            transform.position = new Vector3(cam.transform.position.x + Camera.main.orthographicSize * 5, transform.position.y, transform.position.z);
         }
 
-        else if ((transform.position.x) > (cam.transform.position.x + Camera.main.orthographicSize * 3))
+        else if ((transform.position.x) > (cam.transform.position.x + Camera.main.orthographicSize * 5))
         {
-            transform.position = new Vector3(cam.transform.position.x - Camera.main.orthographicSize * 3, transform.position.y, transform.position.z);
+            transform.position = new Vector3(cam.transform.position.x - Camera.main.orthographicSize * 5, transform.position.y, transform.position.z);
         }
     }
 }

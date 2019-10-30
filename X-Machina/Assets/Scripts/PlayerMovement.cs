@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     {
         jumpOffCoroutineIsRunning = true;
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
         jumpOffCoroutineIsRunning = false;
     }
