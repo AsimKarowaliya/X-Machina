@@ -22,7 +22,17 @@ public class HealthPickUp : MonoBehaviour
                 healthPickup.playerHealth += 1;
             }
         }
-
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        if (healthPickup.playerHealth < 3)
+    //        {
+    //            Destroy(gameObject);
+    //            healthPickup.playerHealth += 1;
+    //        }
+    //    }
+    //}
 }

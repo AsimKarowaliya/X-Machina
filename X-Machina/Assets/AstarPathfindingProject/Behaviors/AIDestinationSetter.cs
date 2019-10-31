@@ -17,7 +17,9 @@ namespace Pathfinding {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
         public float range;
-		IAstarAI ai;
+        private Vector3 originalPos;
+        public float timeLeft = 5.0f;
+        IAstarAI ai;
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -26,6 +28,7 @@ namespace Pathfinding {
 			// frame as the destination is used for debugging and may be used for other things by other
 			// scripts as well. So it makes sense that it is up to date every frame.
 			if (ai != null) ai.onSearchPath += Update;
+            originalPos = transform.position;
 		}
 
 		void OnDisable () {
@@ -35,7 +38,21 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
             float dist = Vector3.Distance(transform.position, target.position);
-			if (target != null && ai != null && dist <= range) ai.destination = target.position;
+            //chase the target when in range.
+            if (target != null && ai != null && dist <= range)
+            {
+                ai.destination = target.position;
+                timeLeft = 5.0f;
+            }
+            //return to original position if not in range for 5 seconds.
+            else if (transform.position != originalPos && dist > range)
+            {
+                timeLeft -= Time.deltaTime;
+                if(timeLeft <= 0)
+                {
+                    ai.destination = originalPos;
+                }
+            }
 		}
 	}
 }
