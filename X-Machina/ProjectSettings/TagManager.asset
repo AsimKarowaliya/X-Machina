@@ -11,6 +11,7 @@ TagManager:
   - BlueBullet
   - Enemy
   - Ammo
+  - Grenade
   layers:
   - Default
   - TransparentFX
