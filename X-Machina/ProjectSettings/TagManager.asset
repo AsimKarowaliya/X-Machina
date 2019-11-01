@@ -10,6 +10,7 @@ TagManager:
   - Heart
   - BlueBullet
   - Enemy
+  - Ammo
   layers:
   - Default
   - TransparentFX
