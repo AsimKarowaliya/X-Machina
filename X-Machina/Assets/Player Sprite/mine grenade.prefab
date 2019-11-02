@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   radius: 3
-  force: 500
+  force: 5
   explosionParticle: {fileID: 3688972962901354540, guid: 8d14d3e2e05a3894e9c89c00e9b61b03,
     type: 3}
+  grenadeBody: {fileID: -1265178612309233769}

@@ -22,10 +22,6 @@ public class CharacterController2D : MonoBehaviour
     public float Jumptime;
     private bool isJumping;
 
-    public float maxGrenadeCount = 3; //maximum of grenade he can hold.
-    public float grenadeCount;
-    public GameObject grenadeMod;
-    public bool grenadeActive;
     [Header("Events")]
     [Space]
 
@@ -47,7 +43,6 @@ public class CharacterController2D : MonoBehaviour
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
 
-        grenadeCount = maxGrenadeCount;
     }
 
     private void FixedUpdate()
@@ -68,8 +63,6 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        if (grenadeMod.activeSelf) grenadeActive = true;
-        else if (!grenadeMod.activeSelf) grenadeActive = false;
     }
 
 
@@ -163,14 +156,6 @@ public class CharacterController2D : MonoBehaviour
             isJumping = false;
         }
 
-        //throwing grenade.
-        if(Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
-        {
-            //Instantiate(grenadeMod, transform.position, transform.rotation);
-            Grenade grenade = Instantiate(grenadeMod, transform.position, Quaternion.identity).GetComponent<Grenade>();
-            grenadeActive = true;
-            grenadeCount -= 1;
-        }
     }
 
 

@@ -6,17 +6,17 @@ public class Grenade : MonoBehaviour
 {
     public int damage = 5;
     public float radius = 3;
-    public float force = 500;
+    public float force = 0.3f;
     float timer = 3;
     float countdown;
     public GameObject explosionParticle;
 
     private bool suicide;
-    private Rigidbody2D grenadeBody;
+    public Rigidbody2D grenadeBody;
     // Start is called before the first frame update
     void Start()
     {
-
+        grenadeBody.velocity = transform.right * force;
     }
 
     // Update is called once per frame

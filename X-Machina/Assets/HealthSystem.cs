@@ -7,10 +7,13 @@ public class HealthSystem : MonoBehaviour
 {
 
     public int playerHealth;
+    public int ShieldHealth;
     public int numOfHearts;
 
     public Image[] hearts;
+    public Image[] blueHearts;
     public Sprite fullHearts;
+    public Sprite FullBlueHearts;
     public Sprite emptyHearts;
 
     public GameObject gameoverMenu;
@@ -51,7 +54,28 @@ public class HealthSystem : MonoBehaviour
             }
         }
 
-        if(playerHealth <= 0)
+        for (int i = 0; i < blueHearts.Length; i++)
+        {
+            if (i < ShieldHealth)
+            {
+              blueHearts[i].sprite = FullBlueHearts;
+            }
+            else
+            {
+                blueHearts[i].sprite = emptyHearts;
+            }
+
+            if (i < numOfHearts)
+            {
+                blueHearts[i].enabled = true;
+            }
+            else
+            {
+                blueHearts[i].enabled = false;
+            }
+        }
+
+        if (playerHealth <= 0)
         {
             Destroy(gameObject);
             Time.timeScale = 0;

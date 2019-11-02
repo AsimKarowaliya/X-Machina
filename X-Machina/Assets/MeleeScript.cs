@@ -71,8 +71,14 @@ public class MeleeScript : MonoBehaviour
         if (coll.gameObject.CompareTag("Player"))
         {
             HealthSystem health = coll.gameObject.GetComponent<HealthSystem>();
-
-            health.playerHealth -= 1;
+            if(health.ShieldHealth != 0)
+            {
+                health.ShieldHealth -= 1;
+            }else if (health.ShieldHealth == 0)
+            {
+                health.playerHealth -= 1;
+            }
+         
         }
         if (coll.gameObject.CompareTag("Bullet"))
         {

@@ -35,9 +35,15 @@ public class BlueBullet : MonoBehaviour
 
         if (hitInfo.CompareTag("Player"))
         {
-            HealthSystem health = hitInfo.GetComponent<HealthSystem>();
-
-            health.playerHealth -= 1;
+            HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
+            if (health.ShieldHealth != 0)
+            {
+                health.ShieldHealth -= 1;
+            }
+            else if (health.ShieldHealth == 0)
+            {
+                health.playerHealth -= 1;
+            }
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
