@@ -12,6 +12,7 @@ public class flyEnemy : MonoBehaviour
     public GameObject deathEffect;
     public int Damage = 1;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
         MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
         flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
         GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
+        Boss1 boss= hitInfo.GetComponent<Boss1>();
         if (enemy !=null)
         {
             enemy.TakeDamage(Damage);
@@ -49,6 +50,10 @@ public class Bullet : MonoBehaviour
         else if(groundMech != null)
         {
             groundMech.TakeDamage(Damage);
+        }
+        else if (boss != null)
+        {
+            boss.TakeDamage(Damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
