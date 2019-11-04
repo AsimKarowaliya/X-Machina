@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AmmoText : MonoBehaviour
+public class GrenadeCount : MonoBehaviour
 {
-    Text text;
-    public static int ammoAmount = 100;
+     Text text;
+    public static int ammoAmount = 3;
     // Start is called before the first frame update
     void Start()
     {
