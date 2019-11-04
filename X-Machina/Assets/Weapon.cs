@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
 
     void Granade()
     {
-        grenadeCount -= 1;
+        GrenadeAmmo.ammoAmount -= 1;
         Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
     }
 
