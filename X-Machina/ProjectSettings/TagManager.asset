@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Ammo
   - Grenade
+  - WhiteAI
   layers:
   - Default
   - TransparentFX

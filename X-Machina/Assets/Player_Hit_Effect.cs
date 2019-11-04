@@ -17,6 +17,7 @@ public class Player_Hit_Effect : MonoBehaviour
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
             GetComponent<SpriteRenderer>().color = Color.red;
+            this.transform.Translate(Vector2.right * 50 * Time.deltaTime);
             Invoke("ResetMat", 0.05f);
             // HealthSystem SN = coll.GetComponent<HealthSystem>();
             // SN.playerHealth -= 1;
