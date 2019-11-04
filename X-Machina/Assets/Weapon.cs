@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && GrenadeCount.ammoAmount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
         {
             Granade();
             grenadeActive = true;
@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
 
     void Granade()
     {
-        GrenadeCount.ammoAmount -= 1;
+        grenadeCount -= 1;
         Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
     }
 
