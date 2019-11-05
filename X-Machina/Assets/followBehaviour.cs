@@ -36,8 +36,7 @@ public class followBehaviour : StateMachineBehaviour
 
         //rand = Random.Range(0,3);
 
-         if(distance>3)
-            animator.SetBool("runing", true);
+        
 
 
     }
