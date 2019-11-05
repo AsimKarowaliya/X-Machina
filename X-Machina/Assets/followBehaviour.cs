@@ -14,6 +14,7 @@ public class followBehaviour : StateMachineBehaviour
     public float high;
     BossAI boss1;
     private int rand;
+    private int number = 0;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
@@ -29,8 +30,12 @@ public class followBehaviour : StateMachineBehaviour
         distance = System.Math.Abs(animator.transform.position.x - playerPos.position.x);
         high = playerPos.position.y- animator.transform.position.y ;
         //if(distance<15f)
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
-        //System.Console.WriteLine(playerPos.position.x);
+        if ((playerPos.position.y > -2.3 && playerPos.position.x > 76.8) || number > 1)
+        {
+            animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
+            number++;
+        }
+            //System.Console.WriteLine(playerPos.position.x);
         if(distance<3 && high<3)
             animator.SetBool("atk", true);
         //Debug.Log(distance);

@@ -24,6 +24,7 @@ public class BossAI : MonoBehaviour
     public float high;
     public GameObject deathEffect;
     private int number=0;
+    private int number1 = 0;
     BossBoom boom;
     // Start is called before the first frame update
     void Start()
@@ -105,122 +106,124 @@ public class BossAI : MonoBehaviour
         rand = Random.Range(0, 2);
         movespeed= Random.Range(2, 6);
         int jumphigh = Random.Range(3, 12);
-        
-        if (health > 0.7 * healthCopy)
+        if ((playerPos.position.y > -2.3 && playerPos.position.x > 76.8) || 1 > 1)
         {
-            if (rand == 0)
+            if (health > 0.7 * healthCopy)
             {
-                if (high > 2)
+                number1++;
+                if (rand == 0)
                 {
-                    if (distance <= -0.01f)
+                    if (high > 2)
                     {
-                        Anim.SetBool("Jump", true);
-                        rb.velocity = new Vector2(movespeed, 12);
+                        if (distance <= -0.01f)
+                        {
+                            Anim.SetBool("Jump", true);
+                            rb.velocity = new Vector2(movespeed, 12);
 
+                        }
+                        else if (distance >= 0.01f)
+                        {
+                            Anim.SetBool("Jump", true);
+                            rb.velocity = new Vector2(-movespeed, 12);
+
+                        }
                     }
-                    else if (distance >= 0.01f)
+                }
+                else if (rand == 1)
+                {
+                    if (System.Math.Abs(distance) > 1)
                     {
-                        Anim.SetBool("Jump", true);
-                        rb.velocity = new Vector2(-movespeed, 12);
-
+                        if (distance <= -0.01f)
+                        {
+                            Anim.SetBool("runing", true);
+                            rb.velocity = new Vector2(5f, rb.velocity.y);
+                            //Anim.SetBool("runing", false);
+                        }
+                        else if (distance >= 0.01f)
+                        {
+                            Anim.SetBool("runing", true);
+                            rb.velocity = new Vector2(-5f, rb.velocity.y);
+                            //Anim.SetBool("runing", false);
+                        }
                     }
                 }
             }
-            else if (rand == 1)
+            else if (health <= 0.7 * healthCopy)
             {
-                if (System.Math.Abs(distance) > 1)
+
+                if (number == 0)
                 {
+                    Anim.SetBool("boss70%", true);
+                    number++;
+                }
+                else if (number == 1 && health <= 0.3 * healthCopy)
+                {
+                    Anim.SetBool("boss30%", true);
+                }
+
+
+                if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0") && System.Math.Abs(distance) > 4)
+                {
+                    Shoot();
+                }
+
+                if (Anim.GetBool("boss30%"))
+                {
+                    //boom.speed = Random.Range(8, 15);
+                    Shoot();
+
                     if (distance <= -0.01f)
                     {
-                        Anim.SetBool("runing", true);
-                        rb.velocity = new Vector2(5f, rb.velocity.y);
-                        //Anim.SetBool("runing", false);
+                        Anim.SetBool("Jump", true);
+                        rb.velocity = new Vector2(movespeed, jumphigh);
+
                     }
                     else if (distance >= 0.01f)
                     {
-                        Anim.SetBool("runing", true);
-                        rb.velocity = new Vector2(-5f, rb.velocity.y);
-                        //Anim.SetBool("runing", false);
+                        Anim.SetBool("Jump", true);
+                        rb.velocity = new Vector2(-movespeed, jumphigh);
+
                     }
+                }
+                else if (rand == 0)
+                {
+                    if (high > 2)
+                    {
+                        if (distance <= -0.01f)
+                        {
+                            Anim.SetBool("Jump", true);
+                            rb.velocity = new Vector2(movespeed, 12);
+
+                        }
+                        else if (distance >= 0.01f)
+                        {
+                            Anim.SetBool("Jump", true);
+                            rb.velocity = new Vector2(-movespeed, 12);
+
+                        }
+                    }
+                }
+                else if (rand == 1)
+                {
+                    if (System.Math.Abs(distance) > 2)
+                    {
+                        if (distance <= -0.01f)
+                        {
+                            Anim.SetBool("runing", true);
+                            rb.velocity = new Vector2(7f, rb.velocity.y);
+                            //Anim.SetBool("runing", false);
+                        }
+                        else if (distance >= 0.01f)
+                        {
+                            Anim.SetBool("runing", true);
+                            rb.velocity = new Vector2(-7f, rb.velocity.y);
+                            //Anim.SetBool("runing", false);
+                        }
+                    }
+
                 }
             }
         }
-        else if (health <= 0.7 * healthCopy)
-        {
-
-            if (number == 0)
-            {
-                Anim.SetBool("boss70%", true);
-                number++;
-            }
-            else if (number == 1 && health <= 0.3 * healthCopy)
-            {
-                Anim.SetBool("boss30%", true);
-            }
-
-          
-            if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0")&& System.Math.Abs(distance) > 4)
-            {
-                Shoot();
-            }
-
-            if (Anim.GetBool("boss30%"))
-            {
-                //boom.speed = Random.Range(8, 15);
-                Shoot();
-         
-                if (distance <= -0.01f)
-                {
-                    Anim.SetBool("Jump", true);
-                    rb.velocity = new Vector2(movespeed, jumphigh);
-
-                }
-                else if (distance >= 0.01f)
-                {
-                    Anim.SetBool("Jump", true);
-                    rb.velocity = new Vector2(-movespeed, jumphigh);
-
-                }
-            }
-            else if (rand == 0)
-            {
-                if (high > 2)
-                {
-                    if (distance <= -0.01f)
-                    {
-                        Anim.SetBool("Jump", true);
-                        rb.velocity = new Vector2(movespeed, 12);
-
-                    }
-                    else if (distance >= 0.01f)
-                    {
-                        Anim.SetBool("Jump", true);
-                        rb.velocity = new Vector2(-movespeed, 12);
-
-                    }
-                }
-            }
-            else if (rand == 1)
-            {
-                if (System.Math.Abs(distance) > 2)
-                {
-                    if (distance <= -0.01f)
-                    {
-                        Anim.SetBool("runing", true);
-                        rb.velocity = new Vector2(7f, rb.velocity.y);
-                        //Anim.SetBool("runing", false);
-                    }
-                    else if (distance >= 0.01f)
-                    {
-                        Anim.SetBool("runing", true);
-                        rb.velocity = new Vector2(-7f, rb.velocity.y);
-                        //Anim.SetBool("runing", false);
-                    }
-                }
-               
-            }
-        }
-
         //Debug.Log(gameObject.name);
         if (coll.gameObject.CompareTag("Player"))
         {
