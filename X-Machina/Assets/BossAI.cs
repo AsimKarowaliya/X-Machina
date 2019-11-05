@@ -61,8 +61,19 @@ public class BossAI : MonoBehaviour
             goingLeft = true;
 
             transform.localScale = new Vector3(1f, 1f, 1f);
-            
-            //goingLeft = true;
+
+            if (health <= 0.7 * healthCopy)
+            {
+                if (number == 0)
+                {
+                    Anim.SetBool("boss70%", true);
+                    number++;
+                }
+                else if (number == 1 && health <= 0.3 * healthCopy)
+                {
+                    Anim.SetBool("boss30%", true);
+                }
+            }
         }
         else if (distance >= 0.01f)
         {
@@ -113,7 +124,7 @@ public class BossAI : MonoBehaviour
                 number1++;
                 if (rand == 0)
                 {
-                    if (System.Math.Abs(high) > 1.5)
+                    if (high > 1.5)
                     {
                         if (distance <= -0.01f)
                         {
@@ -151,18 +162,10 @@ public class BossAI : MonoBehaviour
             else if (health <= 0.7 * healthCopy)
             {
 
-                if (number == 0)
-                {
-                    Anim.SetBool("boss70%", true);
-                    number++;
-                }
-                else if (number == 1 && health <= 0.3 * healthCopy)
-                {
-                    Anim.SetBool("boss30%", true);
-                }
+                
 
 
-                if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0") && System.Math.Abs(distance) > 4)
+                if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0") && System.Math.Abs(distance) > 2)
                 {
                     Shoot();
                 }
@@ -187,7 +190,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 0)
                 {
-                    if (System.Math.Abs(high) > 1.5)
+                    if (high> 1.5)
                     {
                         if (distance <= -0.01f)
                         {
@@ -205,7 +208,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 1)
                 {
-                    if (System.Math.Abs(distance) > 2)
+                    if (System.Math.Abs(distance) > 1)
                     {
                         if (distance <= -0.01f)
                         {

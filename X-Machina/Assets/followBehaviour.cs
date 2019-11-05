@@ -12,14 +12,15 @@ public class followBehaviour : StateMachineBehaviour
     public float jumpPower;
     public float distance;
     public float high;
-    BossAI boss1;
+    private BossAI boss1;
     private int rand;
     private int number = 0;
+    private int number1 = 0;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         boss= GameObject.FindGameObjectWithTag("Player").transform;
-      
+        
         // System.Console.WriteLine("hi");
 
     }
@@ -30,24 +31,22 @@ public class followBehaviour : StateMachineBehaviour
         distance = System.Math.Abs(animator.transform.position.x - playerPos.position.x);
         high = playerPos.position.y- animator.transform.position.y ;
         //if(distance<15f)
-        if (playerPos.position.x > 76.8|| number > 0)
-        {
-            animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
-            number++;
-        }
-            //System.Console.WriteLine(playerPos.position.x);
-        if(distance<3 && high<3)
-            animator.SetBool("atk", true);
-        //Debug.Log(distance);
-        rand = Random.Range(0, 2);
        
-        
+            animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
+
+        //rand = Random.Range(0,3);
+
+         if(distance>3)
+            animator.SetBool("runing", true);
+
+
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+       
+           // animator.SetBool("runing", true);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
