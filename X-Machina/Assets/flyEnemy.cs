@@ -60,11 +60,11 @@ public class flyEnemy : MonoBehaviour
             HealthSystem health = coll.gameObject.GetComponent<HealthSystem>();
             if (health.ShieldHealth != 0)
             {
-                health.ShieldHealth -= 1;
+                health.ShieldHealth -= Damage;
             }
             else if (health.ShieldHealth == 0)
             {
-                health.playerHealth -= 1;
+                health.playerHealth -= Damage;
             }
         }
         if (coll.CompareTag("Bullet"))

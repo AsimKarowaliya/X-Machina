@@ -39,7 +39,7 @@ public class Grenade : MonoBehaviour
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss1"))
         {
             Explode();
             Destroy(this.gameObject);
@@ -66,6 +66,7 @@ public class Grenade : MonoBehaviour
         MeleeScript enemyMelee = collider.GetComponent<MeleeScript>();
         flyEnemy enemyfly = collider.GetComponent<flyEnemy>();
         GroundMechScript groundMech = collider.GetComponent<GroundMechScript>();
+        BossAI boss = collider.GetComponent<BossAI>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
@@ -86,6 +87,10 @@ public class Grenade : MonoBehaviour
         else if (groundMech != null)
         {
             groundMech.TakeDamage(damage);
+        }
+        else if (boss != null)
+        {
+            boss.TakeDamage(damage);
         }
         //Destroy(gameObject);
     }
