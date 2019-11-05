@@ -30,7 +30,7 @@ public class followBehaviour : StateMachineBehaviour
         distance = System.Math.Abs(animator.transform.position.x - playerPos.position.x);
         high = playerPos.position.y- animator.transform.position.y ;
         //if(distance<15f)
-        if ((playerPos.position.y > -2.3 && playerPos.position.x > 76.8) || number > 1)
+        if (playerPos.position.x > 76.8|| number > 1)
         {
             animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
             number++;
