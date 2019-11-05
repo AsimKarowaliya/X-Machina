@@ -14,6 +14,8 @@ public class Grenade : MonoBehaviour
 
     public bool suicide;
     public Rigidbody2D grenadeBody;
+    //private BoxCollider2D grenadeCollider;
+    //private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,8 @@ public class Grenade : MonoBehaviour
         {
             Explode();
             Destroy(this.gameObject);
+            //grenadeCollider.enabled = false;
+            //spriteRenderer.enabled = false;
         }
     }
 
