@@ -106,14 +106,14 @@ public class BossAI : MonoBehaviour
         rand = Random.Range(0, 2);
         movespeed= Random.Range(2, 6);
         int jumphigh = Random.Range(3, 12);
-        if ((playerPos.position.y > -2.3 && playerPos.position.x > 76.8) || 1 > 1)
+        if (playerPos.position.x > 76.8 || number1 > 0)
         {
             if (health > 0.7 * healthCopy)
             {
                 number1++;
                 if (rand == 0)
                 {
-                    if (high > 2)
+                    if (System.Math.Abs(high) > 1.5)
                     {
                         if (distance <= -0.01f)
                         {
@@ -187,7 +187,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 0)
                 {
-                    if (high > 2)
+                    if (System.Math.Abs(high) > 1.5)
                     {
                         if (distance <= -0.01f)
                         {

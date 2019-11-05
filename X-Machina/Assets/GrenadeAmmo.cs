@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GrenadeAmmo : MonoBehaviour
 {
     Text text;
-    public static int ammoAmount = 3;
+    public static int ammoAmount = 4;
     // Start is called before the first frame update
     void Start()
     {
