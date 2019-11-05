@@ -9,15 +9,20 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float distance = 0.8f;
-    public float maxGrenadeCount = 3; //maximum of grenade he can hold.
-    public float grenadeCount;
+    public int maxGrenadeCount = 3; //maximum of grenade he can hold.
+    public int grenadeCount;
     public GameObject grenadeMod;
+    private GameObject grenade;
+    private GameObject[] grenadeArr;
+    private int activeGrenadeCount = 0;
     public bool grenadeActive;
     public Animator recoileffect;
 
     void Start()
     {
         grenadeCount = maxGrenadeCount;
+        grenadeActive = false;
+        grenadeArr = new GameObject[maxGrenadeCount];
     }
 
     // Update is called once per frame
@@ -36,12 +41,25 @@ public class Weapon : MonoBehaviour
         //throwing grenade.
         if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
         {
-            Granade();
+            //Granade();
+            GrenadeAmmo.ammoAmount -= 1;
+            //Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
+            grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
+            grenadeArr[activeGrenadeCount] = grenade;
+            activeGrenadeCount += 1;
+            grenadeCount -= 1;
             grenadeActive = true;
         }
 
-        if (grenadeMod.activeSelf) grenadeActive = true;
-        else if (!grenadeMod.activeSelf) grenadeActive = false;
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            //grenade.GetComponent<Grenade>().SuicideBombing();
+            foreach (GameObject g in grenadeArr)
+            {
+                if(g.activeSelf)
+                    g.GetComponent<Grenade>().SuicideBombing();
+            }
+        }
     }
 
     void Shoot()
@@ -54,6 +72,7 @@ public class Weapon : MonoBehaviour
     {
         GrenadeAmmo.ammoAmount -= 1;
         Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
+        grenadeCount -= 1;
     }
 
 

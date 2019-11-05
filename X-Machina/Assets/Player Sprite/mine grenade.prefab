@@ -166,6 +166,8 @@ MonoBehaviour:
   damage: 5
   radius: 3
   force: 5
+  speed: 5
   explosionParticle: {fileID: 3688972962901354540, guid: 8d14d3e2e05a3894e9c89c00e9b61b03,
     type: 3}
+  suicide: 1
   grenadeBody: {fileID: -1265178612309233769}

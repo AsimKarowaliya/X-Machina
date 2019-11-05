@@ -7,26 +7,27 @@ public class Grenade : MonoBehaviour
     public int damage = 5;
     public float radius = 3;
     public float force = 0.3f;
+    public float speed = 1.0001f;
     float timer = 3;
     float countdown;
     public GameObject explosionParticle;
 
-    private bool suicide;
+    public bool suicide;
     public Rigidbody2D grenadeBody;
     // Start is called before the first frame update
     void Start()
     {
         grenadeBody.velocity = transform.right * force;
+        suicide = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Rigidbody2D>().velocity = new Vector3(2, 0, 0);
-        if (Input.GetKeyDown(KeyCode.T))
+
+        if (suicide)
         {
-            //GetComponent<Rigidbody2D>().velocity = transform.forward;
-            //transform.Translate(transform.right * 10 * Time.smoothDeltaTime);
+            transform.position += Vector3.right * Time.deltaTime * speed;
         }
     }
 
@@ -82,6 +83,7 @@ public class Grenade : MonoBehaviour
         {
             groundMech.TakeDamage(damage);
         }
+        //Destroy(gameObject);
     }
 
     public void SuicideBombing()
