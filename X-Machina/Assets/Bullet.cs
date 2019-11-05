@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
         MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
         flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
         GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
-        Boss1 boss= hitInfo.GetComponent<Boss1>();
+        BossAI boss= hitInfo.GetComponent<BossAI>();
         if (enemy !=null)
         {
             enemy.TakeDamage(Damage);

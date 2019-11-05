@@ -13,6 +13,7 @@ TagManager:
   - Ammo
   - Grenade
   - WhiteAI
+  - Boss1
   layers:
   - Default
   - TransparentFX
