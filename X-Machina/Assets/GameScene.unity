@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e6a31782200c84f8cac2f9cdbcf24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   distance: 0.08
   target: {fileID: 568042585}
   health: 5
@@ -931,7 +931,7 @@ Transform:
   m_Children:
   - {fileID: 671021578}
   m_Father: {fileID: 776039236}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &160935340
 Rigidbody2D:
@@ -2980,7 +2980,7 @@ Transform:
   m_Children:
   - {fileID: 715370578}
   m_Father: {fileID: 776039236}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &880085920
 Rigidbody2D:
@@ -13572,7 +13572,7 @@ Transform:
   - {fileID: 89036503}
   - {fileID: 1919412623}
   m_Father: {fileID: 776039236}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1086766162
 Rigidbody2D:
@@ -23741,7 +23741,7 @@ Transform:
   m_Children:
   - {fileID: 2050887924}
   m_Father: {fileID: 776039236}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1369115844
 Rigidbody2D:
