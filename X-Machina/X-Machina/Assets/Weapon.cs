@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float distance = 0.8f;
-    public int maxGrenadeCount = 3; //maximum of grenade he can hold.
+    public int maxGrenadeCount = 20; //maximum of grenade he can hold.
     public int grenadeCount;
     public GameObject grenadeMod;
     private GameObject grenade;
