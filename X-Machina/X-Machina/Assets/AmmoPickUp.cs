@@ -10,7 +10,9 @@ public class AmmoPickUp : MonoBehaviour
         {
             AmmoText.ammoAmount += 10;
             GrenadeAmmo.ammoAmount += 1;
-            Destroy(collision.gameObject);
+           var des = GameObject.FindWithTag("Ammo");
+
+            Destroy(des);
         }
     }
 }
