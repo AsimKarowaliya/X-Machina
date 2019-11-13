@@ -55,7 +55,7 @@ public class MeleeScript : MonoBehaviour
     {
         health -= damage;
     }
-    void Die()
+    public void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);

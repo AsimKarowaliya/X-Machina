@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : MonoBehaviour
+public class Grenade : MeleeScript
 {
     public int damage = 5;
     public float radius = 3;
@@ -35,14 +35,17 @@ public class Grenade : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+       
         if (collision.gameObject.tag == "Player")
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss1"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Explode();
-            Destroy(this.gameObject);
+            Die();
+            Destroy(collision.gameObject);
+          
             //grenadeCollider.enabled = false;
             //spriteRenderer.enabled = false;
         }
@@ -52,7 +55,8 @@ public class Grenade : MonoBehaviour
     {
         GameObject explosion = Instantiate(explosionParticle, transform.position, transform.rotation);
         Destroy(explosion, 1);
-
+        GameObject des = GameObject.FindWithTag("Grenade");
+        Destroy(des);
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
         //collider.GetComponent<MeleeScript>().TakeDamage(damage);
         //foreach (Collider2D nearbyObject in collider)

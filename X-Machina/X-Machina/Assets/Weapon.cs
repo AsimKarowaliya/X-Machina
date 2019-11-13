@@ -39,16 +39,20 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0)
         {
             //Granade();
-            GrenadeAmmo.ammoAmount -= 1;
+            
             //Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
             grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
+            GrenadeAmmo.ammoAmount -= 1;
             grenadeArr[activeGrenadeCount] = grenade;
             activeGrenadeCount += 1;
             grenadeCount -= 1;
             grenadeActive = true;
+        }else if(Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount == 0)
+        {
+
         }
 
         if(Input.GetKeyDown(KeyCode.T))
@@ -68,12 +72,12 @@ public class Weapon : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
-    void Granade()
-    {
-        GrenadeAmmo.ammoAmount -= 1;
-        Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
-        grenadeCount -= 1;
-    }
+    //void Granade()
+    //{
+    //    GrenadeAmmo.ammoAmount -= 1;
+    //    Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
+    //    grenadeCount -= 1;
+    //}
 
 
 }

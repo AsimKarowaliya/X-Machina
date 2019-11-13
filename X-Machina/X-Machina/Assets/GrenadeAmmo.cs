@@ -20,7 +20,7 @@ public class GrenadeAmmo : MonoBehaviour
         {
             text.text = "X " + ammoAmount;
         }
-        else
+        else 
         {
             text.text = "Out of Ammo!";
         }
