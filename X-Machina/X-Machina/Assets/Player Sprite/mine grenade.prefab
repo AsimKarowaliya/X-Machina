@@ -113,7 +113,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3998799034253514711}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d0a2126912378a942ba4c7c9866aea60, type: 2}
+  m_Material: {fileID: 6200000, guid: 97f99b6a1b31b8a4b966303bfd2bf95c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: d0a2126912378a942ba4c7c9866aea60, type: 2}
+  m_Material: {fileID: 6200000, guid: 97f99b6a1b31b8a4b966303bfd2bf95c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -163,11 +163,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ecfdc312f25c94597fd641e96933f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  distance: 0
+  target: {fileID: 0}
+  health: 0
+  deathEffect: {fileID: 0}
   damage: 5
   radius: 3
-  force: 5
-  speed: 5
+  force: 3
   explosionParticle: {fileID: 3688972962901354540, guid: 8d14d3e2e05a3894e9c89c00e9b61b03,
     type: 3}
-  suicide: 1
+  suicide: 0
   grenadeBody: {fileID: -1265178612309233769}

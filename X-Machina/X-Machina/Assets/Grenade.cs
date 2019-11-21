@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Grenade : MeleeScript
 {
-    public int damage = 5;
-    public float radius = 3;
-    public float force = 0.3f;
-    public float speed = 1.0001f;
+    public int damage;
+    public float radius;
+    public float force;
     float timer = 3;
     float countdown;
     public GameObject explosionParticle;
 
-    public bool suicide;
+    public bool suicide = false;
     public Rigidbody2D grenadeBody;
-    //private BoxCollider2D grenadeCollider;
-    //private SpriteRenderer spriteRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +24,6 @@ public class Grenade : MeleeScript
     // Update is called once per frame
     void Update()
     {
-
         if (suicide)
         {
             transform.position += Vector3.right * Time.deltaTime * speed;
