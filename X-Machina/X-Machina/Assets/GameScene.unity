@@ -1899,7 +1899,7 @@ MonoBehaviour:
   distance: 0.08
   target: {fileID: 571176577}
   firePoint: {fileID: 1469308782}
-  Bullet: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65, type: 3}
+  Bullet: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897, type: 3}
   shootDistance: 10
   startTime: 0.9
   animator: {fileID: 246347230}
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   distance: 0.08
   target: {fileID: 1108332237}
   firePoint: {fileID: 375504012}
-  Bullet: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65, type: 3}
+  Bullet: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897, type: 3}
   shootDistance: 10
   startTime: 0.9
   animator: {fileID: 529615555}
@@ -4227,7 +4227,7 @@ MonoBehaviour:
   distance: 0.08
   target: {fileID: 50601162}
   firePoint: {fileID: 361104204}
-  Bullet: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65, type: 3}
+  Bullet: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897, type: 3}
   shootDistance: 10
   startTime: 0.9
   animator: {fileID: 909175475}
@@ -62380,7 +62380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 486157600}
-  bulletPrefab: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897,
+  bulletPrefab: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65,
     type: 3}
   distance: 0.8
   maxGrenadeCount: 3
@@ -90715,7 +90715,7 @@ MonoBehaviour:
   distance: 0.08
   target: {fileID: 471548722}
   firePoint: {fileID: 1250906754}
-  Bullet: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65, type: 3}
+  Bullet: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897, type: 3}
   shootDistance: 10
   startTime: 0.9
   animator: {fileID: 1731367141}
@@ -91797,7 +91797,7 @@ MonoBehaviour:
   distance: 0.08
   target: {fileID: 1437189247}
   firePoint: {fileID: 567643581}
-  Bullet: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65, type: 3}
+  Bullet: {fileID: 8044397991789566896, guid: 0185e72e8e5132f4c82e30480c521897, type: 3}
   shootDistance: 10
   startTime: 0.9
   animator: {fileID: 1819079565}
@@ -93925,7 +93925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118302715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5800004, y: -0.45000005, z: -10}
+  m_LocalPosition: {x: -3.5800002, y: -0.45000005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 888304173}

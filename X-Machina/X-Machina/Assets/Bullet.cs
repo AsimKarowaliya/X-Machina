@@ -9,55 +9,43 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public int Damage;
     public GameObject impactEffect;
+
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
         other = GameObject.FindGameObjectWithTag("Flash");
-        
+
     }
     void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
-    
-    // use this to kill the AI
+
+    void ResetMat()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        Patrol2 enemyMech= hitInfo.GetComponent<Patrol2>();
-        MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
-        flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
-        GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
-        BossAI boss= hitInfo.GetComponent<BossAI>();
-        if (enemy !=null)
+
+
+        if (hitInfo.CompareTag("Player"))
         {
-            enemy.TakeDamage(Damage);
-            
-        }
-        else if(enemyMech != null)
-        {
-            enemyMech.TakeDamage(Damage);
-        }
-        else if (enemyMelee != null)
-        {
-            enemyMelee.TakeDamage(Damage);
-        }
-        else if (enemyfly != null)
-        {
-            enemyfly.TakeDamage(Damage);
-        }
-        else if(groundMech != null)
-        {
-            groundMech.TakeDamage(Damage);
-        }
-        else if (boss != null)
-        {
-            boss.TakeDamage(Damage);
+            HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
+            if (health.ShieldHealth != 0)
+            {
+                health.ShieldHealth -= 1;
+            }
+            else if (health.ShieldHealth == 0)
+            {
+                health.playerHealth -= 1;
+            }
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
         Destroy(other);
     }
-    
+
 }

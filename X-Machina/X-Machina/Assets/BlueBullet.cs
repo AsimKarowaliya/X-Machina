@@ -11,7 +11,6 @@ public class BlueBullet : MonoBehaviour
     public Rigidbody2D rb;
     public int Damage;
     public GameObject impactEffect;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,26 +23,39 @@ public class BlueBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void ResetMat()
-    {
-        GetComponent<SpriteRenderer>().color = Color.white;
-    }
-
+    // use this to kill the AI
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        
-
-        if (hitInfo.CompareTag("Player"))
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        Patrol2 enemyMech = hitInfo.GetComponent<Patrol2>();
+        MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
+        flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
+        GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
+        BossAI boss = hitInfo.GetComponent<BossAI>();
+        if (enemy != null)
         {
-            HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
-            if (health.ShieldHealth != 0)
-            {
-                health.ShieldHealth -= 1;
-            }
-            else if (health.ShieldHealth == 0)
-            {
-                health.playerHealth -= 1;
-            }
+            enemy.TakeDamage(Damage);
+
+        }
+        else if (enemyMech != null)
+        {
+            enemyMech.TakeDamage(Damage);
+        }
+        else if (enemyMelee != null)
+        {
+            enemyMelee.TakeDamage(Damage);
+        }
+        else if (enemyfly != null)
+        {
+            enemyfly.TakeDamage(Damage);
+        }
+        else if (groundMech != null)
+        {
+            groundMech.TakeDamage(Damage);
+        }
+        else if (boss != null)
+        {
+            boss.TakeDamage(Damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
