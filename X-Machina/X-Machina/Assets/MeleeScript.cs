@@ -10,6 +10,7 @@ public class MeleeScript : MonoBehaviour
     public Transform target;
     public int health;
     public GameObject deathEffect;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -78,7 +79,6 @@ public class MeleeScript : MonoBehaviour
             {
                 health.playerHealth -= 1;
             }
-         
         }
         if (coll.gameObject.CompareTag("Bullet"))
         {

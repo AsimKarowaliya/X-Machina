@@ -39,11 +39,8 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0 /*&& !grenadeActive*/)
         {
-            //Granade();
-            
-            //Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
             grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
             GrenadeAmmo.ammoAmount -= 1;
             grenadeArr[activeGrenadeCount] = grenade;
@@ -57,12 +54,12 @@ public class Weapon : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.T))
         {
-            //grenade.GetComponent<Grenade>().SuicideBombing();
-            foreach (GameObject g in grenadeArr)
+            for(int i = 0; i < activeGrenadeCount; i++)
             {
-                if(g.activeSelf)
-                    g.GetComponent<Grenade>().SuicideBombing();
+                grenadeArr[i].GetComponent<Grenade>().SuicideBombing();
+                grenadeArr[i] = null;
             }
+            activeGrenadeCount = 0;
         }
     }
 

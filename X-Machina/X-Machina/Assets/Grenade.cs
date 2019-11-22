@@ -7,6 +7,7 @@ public class Grenade : MeleeScript
     public int damage;
     public float radius;
     public float force;
+    public float forwardSpeed;
     float timer = 3;
     float countdown;
     public GameObject explosionParticle;
@@ -26,7 +27,7 @@ public class Grenade : MeleeScript
     {
         if (suicide)
         {
-            transform.position += Vector3.right * Time.deltaTime * speed;
+            transform.position += Vector3.right * Time.deltaTime * forwardSpeed;
         }
     }
 
@@ -37,14 +38,20 @@ public class Grenade : MeleeScript
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
             Explode();
             Die();
-            Destroy(collision.gameObject);
-          
-            //grenadeCollider.enabled = false;
-            //spriteRenderer.enabled = false;
+            //Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Ground")
+        {
+            if ((this.transform.position.x - collision.collider.transform.position.x) < 0 &&
+                    (this.transform.position.x - collision.collider.transform.position.x) > 0)
+            {
+                Explode();
+                Die();
+            }
         }
     }
 
