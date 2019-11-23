@@ -11,15 +11,18 @@ public class Grenade : MeleeScript
     float timer = 3;
     float countdown;
     public GameObject explosionParticle;
+    private GameObject player;
 
-    public bool suicide = false;
+    private bool suicide = false;
+    private bool goingLeft = false;
+    private bool goingRight = false;
     public Rigidbody2D grenadeBody;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         grenadeBody.velocity = transform.right * force;
-        suicide = false;
+        //suicide = false;
     }
 
     // Update is called once per frame
@@ -27,13 +30,20 @@ public class Grenade : MeleeScript
     {
         if (suicide)
         {
-            transform.position += Vector3.right * Time.deltaTime * forwardSpeed;
+            if (goingRight)
+            {
+                transform.position += Vector3.right * Time.deltaTime * forwardSpeed;
+            }
+            if (goingLeft)
+            {
+                transform.position += Vector3.left * Time.deltaTime * forwardSpeed;
+            }
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       
+        var relativePosition = transform.InverseTransformPoint(collision.transform.position);
         if (collision.gameObject.tag == "Player")
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
@@ -41,16 +51,11 @@ public class Grenade : MeleeScript
         if (collision.gameObject.tag == "Enemy")
         {
             Explode();
-            Die();
             //Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && relativePosition.y < 0)
         {
-            if ((transform.position.x - collision.collider.transform.position.x) < 0)
-            {
-                Explode();
-                Die();
-            }
+            Explode();
         }
     }
 
@@ -58,8 +63,8 @@ public class Grenade : MeleeScript
     {
         GameObject explosion = Instantiate(explosionParticle, transform.position, transform.rotation);
         Destroy(explosion, 1);
-        GameObject des = GameObject.FindWithTag("Grenade");
-        Destroy(des);
+        //GameObject des = GameObject.FindWithTag("Grenade");
+        //Destroy(des);
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
         //collider.GetComponent<MeleeScript>().TakeDamage(damage);
         //foreach (Collider2D nearbyObject in collider)
@@ -99,11 +104,19 @@ public class Grenade : MeleeScript
         {
             boss.TakeDamage(damage);
         }
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     public void SuicideBombing()
     {
         suicide = true;
+    }
+    public void GoRight()
+    {
+        goingRight = true;
+    }
+    public void GoLeft()
+    {
+        goingLeft = true;
     }
 }

@@ -169,7 +169,7 @@ MonoBehaviour:
   health: 0
   deathEffect: {fileID: 0}
   damage: 5
-  radius: 3
+  radius: 1
   force: 3
   forwardSpeed: 6
   explosionParticle: {fileID: 3688972962901354540, guid: 8d14d3e2e05a3894e9c89c00e9b61b03,
