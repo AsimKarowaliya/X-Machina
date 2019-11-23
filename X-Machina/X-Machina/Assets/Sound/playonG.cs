@@ -11,7 +11,10 @@ public class playonG : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount != 0)
+        GameObject playa = GameObject.Find("Player");
+        Weapon w = playa.GetComponent<Weapon>();
+
+        if (Input.GetKeyDown(KeyCode.G) && w.grenadeCount != 0)
 		{
 			jp.Play();
 		}

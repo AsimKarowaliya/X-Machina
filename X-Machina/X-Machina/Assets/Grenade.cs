@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : MeleeScript
+public class Grenade : MonoBehaviour
 {
     public int damage;
     public float radius;

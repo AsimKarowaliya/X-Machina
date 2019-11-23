@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 
     public float distance = 0.8f;
     public int maxGrenadeCount; //maximum of grenade he can hold.
-    public static int grenadeCount;
+    public int grenadeCount = 0;
     public GameObject grenadeMod;
     private GameObject grenade;
     private GameObject[] grenadeArr;
@@ -37,11 +37,10 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
         {
             grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
             grenadeArr[activeGrenadeCount] = grenade;
-            GrenadeAmmo.ammoAmount -= 1;
             activeGrenadeCount += 1;
             grenadeCount -= 1;
         }

@@ -5,25 +5,21 @@ using UnityEngine.UI;
 
 public class GrenadeAmmo : MonoBehaviour
 {
-    Text text;
-    public static int ammoAmount;
-    // Start is called before the first frame update
-    void Start()
-    {
-        text = GetComponent<Text>();
-        ammoAmount = Weapon.grenadeCount;
-    }
+    public Text text1;
 
     // Update is called once per frame
     void Update()
     {
-        if (ammoAmount > 0)
+        GameObject playa = GameObject.Find("Player");
+        Weapon w = playa.GetComponent<Weapon>();
+
+        if (w.grenadeCount > 0)
         {
-            text.text = "X " + ammoAmount;
+            text1.text = ("X " + w.grenadeCount);
         }
-        else 
+        else
         {
-            text.text = "Out of Grenade!";
+            text1.text = ("Out of Grenade!");
         }
     }
 }
