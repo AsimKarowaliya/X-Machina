@@ -8,8 +8,9 @@ public class Grenade : MeleeScript
     public float radius;
     public float force;
     public float forwardSpeed;
-    float timer = 3;
-    float countdown;
+    public float timer;
+    public float triggeredTimer;
+
     public GameObject explosionParticle;
     private GameObject player;
 
@@ -22,6 +23,7 @@ public class Grenade : MeleeScript
     void Start()
     {
         grenadeBody.velocity = transform.right * force;
+        StartCoroutine(countdown());
         //suicide = false;
     }
 
@@ -38,6 +40,7 @@ public class Grenade : MeleeScript
             {
                 transform.position += Vector3.left * Time.deltaTime * forwardSpeed;
             }
+            StartCoroutine(countdown());
         }
     }
 
@@ -53,24 +56,17 @@ public class Grenade : MeleeScript
             Explode();
             //Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Ground" && relativePosition.y < 0)
-        {
-            Explode();
-        }
+        //if (collision.gameObject.tag == "Ground" && relativePosition.y < 0)
+        //{
+        //    Explode();
+        //}
     }
 
     void Explode()
     {
         GameObject explosion = Instantiate(explosionParticle, transform.position, transform.rotation);
         Destroy(explosion, 1);
-        //GameObject des = GameObject.FindWithTag("Grenade");
-        //Destroy(des);
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
-        //collider.GetComponent<MeleeScript>().TakeDamage(damage);
-        //foreach (Collider2D nearbyObject in collider)
-        //{
-        //    nearbyObject.GetComponent<MeleeScript>().TakeDamage(damage);
-        //}
 
 
         Enemy enemy = collider.GetComponent<Enemy>();
@@ -118,5 +114,13 @@ public class Grenade : MeleeScript
     public void GoLeft()
     {
         goingLeft = true;
+    }
+    IEnumerator countdown()
+    {
+        if(suicide)
+            yield return new WaitForSecondsRealtime(triggeredTimer);
+        else
+            yield return new WaitForSecondsRealtime(timer);
+        Explode();
     }
 }
