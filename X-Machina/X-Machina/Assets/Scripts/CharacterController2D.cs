@@ -42,7 +42,7 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
-
+        Physics2D.IgnoreLayerCollision(9, 13, true);
     }
 
     private void FixedUpdate()

@@ -475,7 +475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50601162}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 106160731}
   - component: {fileID: 106160730}
   - component: {fileID: 106160737}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &106160734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 160935342}
   - component: {fileID: 160935341}
   - component: {fileID: 160935340}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1432,7 +1432,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160935338}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1444,7 +1444,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &160935341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,7 +1840,7 @@ GameObject:
   - component: {fileID: 246347229}
   - component: {fileID: 246347228}
   - component: {fileID: 246347227}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlatformMech
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1871,7 +1871,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246347225}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1883,7 +1883,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &246347228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2229,7 +2229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361104204}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375504012}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ GameObject:
   - component: {fileID: 428548275}
   - component: {fileID: 428548274}
   - component: {fileID: 428548273}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (8)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2336,7 +2336,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &428548274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,7 +2464,7 @@ GameObject:
   - component: {fileID: 467942461}
   - component: {fileID: 467942460}
   - component: {fileID: 467942464}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Boss1
   m_TagString: Boss1
   m_Icon: {fileID: 0}
@@ -2633,7 +2633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471548722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2805,7 +2805,7 @@ GameObject:
   - component: {fileID: 529615554}
   - component: {fileID: 529615553}
   - component: {fileID: 529615552}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlatformMech (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2836,7 +2836,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529615550}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2848,7 +2848,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &529615553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2976,7 +2976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567643581}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3006,7 +3006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571176577}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3122,7 +3122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671021578}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3152,7 +3152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 715370578}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3428,7 +3428,7 @@ GameObject:
   - component: {fileID: 820711904}
   - component: {fileID: 820711903}
   - component: {fileID: 820711902}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mech_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3574,7 +3574,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &820711907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3786,7 +3786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842022030}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3821,7 +3821,7 @@ GameObject:
   - component: {fileID: 880085922}
   - component: {fileID: 880085921}
   - component: {fileID: 880085920}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3851,7 +3851,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880085918}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3863,7 +3863,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &880085921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 909175474}
   - component: {fileID: 909175473}
   - component: {fileID: 909175472}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlatformMech (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4199,7 +4199,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909175470}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4211,7 +4211,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &909175473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62595,7 +62595,7 @@ GameObject:
   - component: {fileID: 1013417163}
   - component: {fileID: 1013417162}
   - component: {fileID: 1013417161}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0 (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -62735,7 +62735,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1013417166
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62951,7 +62951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1108332237}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87084,7 +87084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250906754}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87430,7 +87430,7 @@ GameObject:
   - component: {fileID: 1369115846}
   - component: {fileID: 1369115845}
   - component: {fileID: 1369115844}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (6)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -87460,7 +87460,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369115842}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -87472,7 +87472,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1369115845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87595,7 +87595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372979306}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -87768,7 +87768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437189247}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87913,7 +87913,7 @@ GameObject:
   - component: {fileID: 1453280215}
   - component: {fileID: 1453280214}
   - component: {fileID: 1453280213}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -87943,7 +87943,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453280211}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -87955,7 +87955,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1453280214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88193,7 +88193,7 @@ GameObject:
   - component: {fileID: 1464982991}
   - component: {fileID: 1464982990}
   - component: {fileID: 1464982989}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88333,7 +88333,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1464982994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88344,7 +88344,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -88438,7 +88438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469308782}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88704,7 +88704,7 @@ GameObject:
   - component: {fileID: 1494894772}
   - component: {fileID: 1494894766}
   - component: {fileID: 1494894767}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88719,7 +88719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494894764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -0.36, z: 0}
+  m_LocalPosition: {x: 0.63, y: -0.36, z: 0}
   m_LocalScale: {x: 2.76156, y: 2.76156, z: 0.92051995}
   m_Children:
   - {fileID: 1372979306}
@@ -88752,7 +88752,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494894764}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -88764,7 +88764,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &1494894772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88774,7 +88774,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1494894764}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9a697335fed2b3f4eb4391a5ef30b984, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -88910,7 +88910,7 @@ GameObject:
   - component: {fileID: 1508533890}
   - component: {fileID: 1508533889}
   - component: {fileID: 1508533888}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy (7)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88940,7 +88940,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508533886}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -88952,7 +88952,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1508533889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89129,7 +89129,7 @@ GameObject:
   - component: {fileID: 1515928719}
   - component: {fileID: 1515928718}
   - component: {fileID: 1515928717}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0 (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -89269,7 +89269,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1515928722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89526,7 +89526,7 @@ GameObject:
   - component: {fileID: 1591753000}
   - component: {fileID: 1591752999}
   - component: {fileID: 1591752998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0 (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -89771,7 +89771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596791680}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89806,7 +89806,7 @@ GameObject:
   - component: {fileID: 1604480338}
   - component: {fileID: 1604480337}
   - component: {fileID: 1604480341}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundMech
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -90656,7 +90656,7 @@ GameObject:
   - component: {fileID: 1731367140}
   - component: {fileID: 1731367139}
   - component: {fileID: 1731367138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlatformMech (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -90687,7 +90687,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731367136}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -90699,7 +90699,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1731367139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90983,7 +90983,7 @@ GameObject:
   - component: {fileID: 1777015615}
   - component: {fileID: 1777015614}
   - component: {fileID: 1777015613}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flyEnemy_0 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91396,7 +91396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788295654}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91738,7 +91738,7 @@ GameObject:
   - component: {fileID: 1819079564}
   - component: {fileID: 1819079563}
   - component: {fileID: 1819079562}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlatformMech (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91769,7 +91769,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819079560}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -91781,7 +91781,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1819079563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91989,7 +91989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1895140966}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -92229,7 +92229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1956584403}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92887,7 +92887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021898159}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -93716,7 +93716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050887924}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: isGround
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -93746,7 +93746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2085847668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

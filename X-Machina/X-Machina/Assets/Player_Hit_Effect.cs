@@ -9,19 +9,29 @@ public class Player_Hit_Effect : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnCollisionEnter2D(Collision2D coll)
     {
        
-        if (coll.CompareTag("BlueBullet") || coll.CompareTag("Enemy"))
+        if (coll.gameObject.tag == ("BlueBullet") || coll.gameObject.tag == ("Enemy"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
             GetComponent<SpriteRenderer>().color = Color.red;
-            //this.transform.Translate(Vector2.right * 60 * Time.deltaTime);
-            Invoke("ResetMat", 0.05f);
+            StartCoroutine("immune");
+            this.transform.Translate(Vector2.right * 30 * Time.deltaTime);
+            Invoke("ResetMat", 1.0f);
+            IEnumerator coroutine = immune();
+            StartCoroutine(coroutine);
+            //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>(), true);
             // HealthSystem SN = coll.GetComponent<HealthSystem>();
             // SN.playerHealth -= 1;
         }
 
+    }
+    IEnumerator immune()
+    {
+        Physics2D.IgnoreLayerCollision(9, 12, true);
+        yield return new WaitForSecondsRealtime(1.0f);
+        Physics2D.IgnoreLayerCollision(9, 12, false);
     }
 }

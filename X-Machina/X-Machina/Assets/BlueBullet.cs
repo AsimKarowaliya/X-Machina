@@ -16,7 +16,6 @@ public class BlueBullet : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
         other = GameObject.FindGameObjectWithTag("Flash");
-
     }
     void OnBecameInvisible()
     {
