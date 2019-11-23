@@ -15,6 +15,9 @@ public class Grenade : MeleeScript
     private GameObject player;
 
     public AudioSource sound;
+    public AudioClip explodeSound;
+    public Collider2D grenadeCollider;
+    public SpriteRenderer spriteRenderer;
 
     private bool suicide = false;
     private bool goingLeft = false;
@@ -34,6 +37,10 @@ public class Grenade : MeleeScript
     void Update()
     {
         timer -= Time.deltaTime;
+        if(exploded && !sound.isPlaying)
+        {
+            Destroy(gameObject);
+        }
         if (suicide)
         {
             if (goingRight)
@@ -63,42 +70,50 @@ public class Grenade : MeleeScript
 
     public void Explode()
     {
-        Instantiate(explosionParticle, transform.position, transform.rotation);
-        Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
+        if (!exploded)
+        {
+            Instantiate(explosionParticle, transform.position, transform.rotation);
+            Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
 
 
-        Enemy enemy = collider.GetComponent<Enemy>();
-        Patrol2 enemyMech = collider.GetComponent<Patrol2>();
-        MeleeScript enemyMelee = collider.GetComponent<MeleeScript>();
-        flyEnemy enemyfly = collider.GetComponent<flyEnemy>();
-        GroundMechScript groundMech = collider.GetComponent<GroundMechScript>();
-        BossAI boss = collider.GetComponent<BossAI>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
+            Enemy enemy = collider.GetComponent<Enemy>();
+            Patrol2 enemyMech = collider.GetComponent<Patrol2>();
+            MeleeScript enemyMelee = collider.GetComponent<MeleeScript>();
+            flyEnemy enemyfly = collider.GetComponent<flyEnemy>();
+            GroundMechScript groundMech = collider.GetComponent<GroundMechScript>();
+            BossAI boss = collider.GetComponent<BossAI>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
 
+            }
+            else if (enemyMech != null)
+            {
+                enemyMech.TakeDamage(damage);
+            }
+            else if (enemyMelee != null)
+            {
+                enemyMelee.TakeDamage(damage);
+            }
+            else if (enemyfly != null)
+            {
+                enemyfly.TakeDamage(damage);
+            }
+            else if (groundMech != null)
+            {
+                groundMech.TakeDamage(damage);
+            }
+            else if (boss != null)
+            {
+                boss.TakeDamage(damage);
+            }
+            //Destroy(gameObject);
+            exploded = true;
+            sound.clip = explodeSound;
+            sound.Play();
+            grenadeCollider.enabled = false;
+            spriteRenderer.enabled = false;
         }
-        else if (enemyMech != null)
-        {
-            enemyMech.TakeDamage(damage);
-        }
-        else if (enemyMelee != null)
-        {
-            enemyMelee.TakeDamage(damage);
-        }
-        else if (enemyfly != null)
-        {
-            enemyfly.TakeDamage(damage);
-        }
-        else if (groundMech != null)
-        {
-            groundMech.TakeDamage(damage);
-        }
-        else if (boss != null)
-        {
-            boss.TakeDamage(damage);
-        }
-        Destroy(gameObject);
     }
 
     public void SuicideBombing()
@@ -113,9 +128,13 @@ public class Grenade : MeleeScript
     {
         goingLeft = true;
     }
-    public bool hasExploded()
+    public void PrepareForDeath()
     {
-        return exploded;
+        sound.clip = explodeSound;
+        sound.Play();
+        grenadeCollider.enabled = false;
+        spriteRenderer.enabled = false;
+        exploded = false;
     }
     IEnumerator countdown()
     {
