@@ -52,10 +52,36 @@ public class flyEnemy : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-    void OnTriggerEnter2D(Collider2D coll)
+    //void OnTriggerEnter2D(Collider2D coll)
+    //{
+    //    //Debug.Log(gameObject.name);
+    //    if (coll.CompareTag("Player"))
+    //    {
+    //        HealthSystem health = coll.gameObject.GetComponent<HealthSystem>();
+    //        if (health.ShieldHealth != 0)
+    //        {
+    //            health.ShieldHealth -= Damage;
+    //        }
+    //        else if (health.ShieldHealth == 0)
+    //        {
+    //            health.playerHealth -= Damage;
+    //        }
+    //    }
+    //    if (coll.CompareTag("Bullet"))
+    //    {
+    //        //Instantiate(DeathEffect, transform.position, Quaternion.identity);
+    //        //Destroy(gameObject);
+    //        GetComponent<SpriteRenderer>().color = Color.red;
+    //        Invoke("ResetMat", 0.05f);
+    //        // HealthSystem SN = coll.GetComponent<HealthSystem>();
+    //        // SN.playerHealth -= 1;
+    //    }
+
+    //}
+    void OnCollisionEnter2D(Collision2D coll)
     {
         //Debug.Log(gameObject.name);
-        if (coll.CompareTag("Player"))
+        if (coll.gameObject.tag == "Player")
         {
             HealthSystem health = coll.gameObject.GetComponent<HealthSystem>();
             if (health.ShieldHealth != 0)
@@ -67,7 +93,7 @@ public class flyEnemy : MonoBehaviour
                 health.playerHealth -= Damage;
             }
         }
-        if (coll.CompareTag("Bullet"))
+        if (coll.gameObject.tag == "BlueBullet")
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);

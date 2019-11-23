@@ -27,11 +27,32 @@ public class Bullet : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    //void OnTriggerEnter2D(Collider2D hitInfo)
+    //{
+
+
+    //    if (hitInfo.CompareTag("Player"))
+    //    {
+    //        HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
+    //        if (health.ShieldHealth != 0)
+    //        {
+    //            health.ShieldHealth -= 1;
+    //        }
+    //        else if (health.ShieldHealth == 0)
+    //        {
+    //            health.playerHealth -= 1;
+    //        }
+    //    }
+    //    Instantiate(impactEffect, transform.position, transform.rotation);
+    //    Destroy(gameObject);
+    //    Destroy(other);
+    //}
+
+    void OnCollisionEnter2D(Collision2D hitInfo)
     {
 
 
-        if (hitInfo.CompareTag("Player"))
+        if (hitInfo.gameObject.tag == "Player")
         {
             HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
             if (health.ShieldHealth != 0)
@@ -47,5 +68,4 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
         Destroy(other);
     }
-
 }

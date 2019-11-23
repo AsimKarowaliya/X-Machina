@@ -155,7 +155,7 @@ public class Patrol2 : MonoBehaviour
                 health.playerHealth -= 1;
             }
         }
-        if (coll.gameObject.CompareTag("Bullet"))
+        if (coll.gameObject.CompareTag("BlueBullet"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);

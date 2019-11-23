@@ -12,7 +12,7 @@ public class Player_Hit_Effect : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
        
-        if (coll.gameObject.tag == ("BlueBullet") || coll.gameObject.tag == ("Enemy"))
+        if (coll.gameObject.tag == ("Bullet") || coll.gameObject.tag == ("Enemy"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
@@ -22,7 +22,7 @@ public class Player_Hit_Effect : MonoBehaviour
             Invoke("ResetMat", 1.0f);
             IEnumerator coroutine = immune();
             StartCoroutine(coroutine);
-            //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>(), true);
+            //IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll.gameObject.GetComponent<Collider2D>(), true);
             // HealthSystem SN = coll.GetComponent<HealthSystem>();
             // SN.playerHealth -= 1;
         }

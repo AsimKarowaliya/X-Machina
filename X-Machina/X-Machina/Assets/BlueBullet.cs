@@ -8,6 +8,7 @@ public class BlueBullet : MonoBehaviour
 {
     public float speed = 20f;
     private GameObject other;
+    private GameObject player;
     public Rigidbody2D rb;
     public int Damage;
     public GameObject impactEffect;
@@ -23,14 +24,51 @@ public class BlueBullet : MonoBehaviour
     }
 
     // use this to kill the AI
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    //void OnTriggerEnter2D(Collider2D hitInfo)
+    //{
+    //    Enemy enemy = hitInfo.GetComponent<Enemy>();
+    //    Patrol2 enemyMech = hitInfo.GetComponent<Patrol2>();
+    //    MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
+    //    flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
+    //    GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
+    //    BossAI boss = hitInfo.GetComponent<BossAI>();
+    //    if (enemy != null)
+    //    {
+    //        enemy.TakeDamage(Damage);
+
+    //    }
+    //    else if (enemyMech != null)
+    //    {
+    //        enemyMech.TakeDamage(Damage);
+    //    }
+    //    else if (enemyMelee != null)
+    //    {
+    //        enemyMelee.TakeDamage(Damage);
+    //    }
+    //    else if (enemyfly != null)
+    //    {
+    //        enemyfly.TakeDamage(Damage);
+    //    }
+    //    else if (groundMech != null)
+    //    {
+    //        groundMech.TakeDamage(Damage);
+    //    }
+    //    else if (boss != null)
+    //    {
+    //        boss.TakeDamage(Damage);
+    //    }
+    //    Instantiate(impactEffect, transform.position, transform.rotation);
+    //    Destroy(gameObject);
+    //    Destroy(other);
+    //}
+    void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        Patrol2 enemyMech = hitInfo.GetComponent<Patrol2>();
-        MeleeScript enemyMelee = hitInfo.GetComponent<MeleeScript>();
-        flyEnemy enemyfly = hitInfo.GetComponent<flyEnemy>();
-        GroundMechScript groundMech = hitInfo.GetComponent<GroundMechScript>();
-        BossAI boss = hitInfo.GetComponent<BossAI>();
+        Enemy enemy = hitInfo.gameObject.GetComponent<Enemy>();
+        Patrol2 enemyMech = hitInfo.gameObject.GetComponent<Patrol2>();
+        MeleeScript enemyMelee = hitInfo.gameObject.GetComponent<MeleeScript>();
+        flyEnemy enemyfly = hitInfo.gameObject.GetComponent<flyEnemy>();
+        GroundMechScript groundMech = hitInfo.gameObject.GetComponent<GroundMechScript>();
+        BossAI boss = hitInfo.gameObject.GetComponent<BossAI>();
         if (enemy != null)
         {
             enemy.TakeDamage(Damage);
@@ -60,5 +98,4 @@ public class BlueBullet : MonoBehaviour
         Destroy(gameObject);
         Destroy(other);
     }
-
 }
