@@ -46,8 +46,7 @@ public class Grenade : MeleeScript
         }
         if (collision.gameObject.tag == "Ground")
         {
-            if ((this.transform.position.x - collision.collider.transform.position.x) < 0 &&
-                    (this.transform.position.x - collision.collider.transform.position.x) > 0)
+            if ((transform.position.x - collision.collider.transform.position.x) < 0)
             {
                 Explode();
                 Die();
