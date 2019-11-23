@@ -54,3 +54,6 @@ TagManager:
   - name: Front
     uniqueID: 474723001
     locked: 0
+  - name: DungeonBackground
+    uniqueID: 801781841
+    locked: 0
