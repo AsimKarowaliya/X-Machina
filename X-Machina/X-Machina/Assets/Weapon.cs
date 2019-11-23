@@ -9,8 +9,8 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float distance = 0.8f;
-    public int maxGrenadeCount = 20; //maximum of grenade he can hold.
-    public int grenadeCount;
+    public int maxGrenadeCount; //maximum of grenade he can hold.
+    public static int grenadeCount;
     public GameObject grenadeMod;
     private GameObject grenade;
     private GameObject[] grenadeArr;
@@ -56,8 +56,21 @@ public class Weapon : MonoBehaviour
         {
             for(int i = 0; i < activeGrenadeCount; i++)
             {
-                grenadeArr[i].GetComponent<Grenade>().SuicideBombing();
-                grenadeArr[i] = null;
+                if(grenadeArr[i] != null)
+                {
+                    Grenade g = grenadeArr[i].GetComponent<Grenade>();
+                    if (gameObject.GetComponent<CharacterController2D>().facingRight())
+                    {
+                        g.GoRight();
+                        g.SuicideBombing();
+                    }
+                    else
+                    {
+                        g.GoLeft();
+                        g.SuicideBombing();
+                    }
+                    grenadeArr[i] = null;
+                }
             }
             activeGrenadeCount = 0;
         }
