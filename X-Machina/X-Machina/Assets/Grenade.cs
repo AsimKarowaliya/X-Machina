@@ -62,7 +62,7 @@ public class Grenade : MeleeScript
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss1")
         {
             Explode();
         }
