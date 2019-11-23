@@ -176,4 +176,5 @@ MonoBehaviour:
   triggeredTimer: 2
   explosionParticle: {fileID: 3688972962901354540, guid: 8d14d3e2e05a3894e9c89c00e9b61b03,
     type: 3}
+  sound: {fileID: 0}
   grenadeBody: {fileID: -1265178612309233769}

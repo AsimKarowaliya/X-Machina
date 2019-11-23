@@ -14,22 +14,26 @@ public class Grenade : MeleeScript
     public GameObject explosionParticle;
     private GameObject player;
 
+    public AudioSource sound;
+
     private bool suicide = false;
     private bool goingLeft = false;
     private bool goingRight = false;
+    private bool exploded;
     public Rigidbody2D grenadeBody;
 
     // Start is called before the first frame update
     void Start()
     {
+        exploded = false;
         grenadeBody.velocity = transform.right * force;
         StartCoroutine(countdown());
-        //suicide = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
         if (suicide)
         {
             if (goingRight)
@@ -54,18 +58,12 @@ public class Grenade : MeleeScript
         if (collision.gameObject.tag == "Enemy")
         {
             Explode();
-            //Destroy(collision.gameObject);
         }
-        //if (collision.gameObject.tag == "Ground" && relativePosition.y < 0)
-        //{
-        //    Explode();
-        //}
     }
 
-    void Explode()
+    public void Explode()
     {
-        GameObject explosion = Instantiate(explosionParticle, transform.position, transform.rotation);
-        Destroy(explosion, 1);
+        Instantiate(explosionParticle, transform.position, transform.rotation);
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius);
 
 
@@ -115,10 +113,14 @@ public class Grenade : MeleeScript
     {
         goingLeft = true;
     }
+    public bool hasExploded()
+    {
+        return exploded;
+    }
     IEnumerator countdown()
     {
         if(suicide)
-            yield return new WaitForSecondsRealtime(triggeredTimer);
+            yield return new WaitForSecondsRealtime(Mathf.Min(timer, triggeredTimer));
         else
             yield return new WaitForSecondsRealtime(timer);
         Explode();

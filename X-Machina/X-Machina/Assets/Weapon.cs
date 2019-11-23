@@ -15,13 +15,11 @@ public class Weapon : MonoBehaviour
     private GameObject grenade;
     private GameObject[] grenadeArr;
     private int activeGrenadeCount = 0;
-    public bool grenadeActive;
     public Animator recoileffect;
 
     void Start()
     {
         grenadeCount = maxGrenadeCount;
-        grenadeActive = false;
         grenadeArr = new GameObject[maxGrenadeCount];
     }
 
@@ -39,17 +37,13 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0 /*&& !grenadeActive*/)
+        if (Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount > 0)
         {
             grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
-            GrenadeAmmo.ammoAmount -= 1;
             grenadeArr[activeGrenadeCount] = grenade;
+            GrenadeAmmo.ammoAmount -= 1;
             activeGrenadeCount += 1;
             grenadeCount -= 1;
-            grenadeActive = true;
-        }else if(Input.GetKeyDown(KeyCode.G) && GrenadeAmmo.ammoAmount == 0)
-        {
-
         }
 
         if(Input.GetKeyDown(KeyCode.T))
