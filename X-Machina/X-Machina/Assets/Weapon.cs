@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-
+    public GameObject Ulti;
     public float distance = 0.8f;
     public int maxGrenadeCount; //maximum of grenade he can hold.
     public int grenadeCount = 0;
@@ -18,18 +19,26 @@ public class Weapon : MonoBehaviour
     public int activeGrenadeCount = 0;
     public Animator recoileffect;
 
+  
     void Start()
     {
         grenadeCount = maxGrenadeCount;
         grenadeArr = new GameObject[maxGrenadeCount];
+      
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetButtonDown("Fire1") && AmmoText.ammoAmount > 0)
         {
             Shoot();
+            recoileffect.SetBool("recoil", true);
+        }
+        else if(Input.GetButtonDown("Fire3")&& Ultimate.Ult == 100f)
+        {
+            ShootUlitmate();
             recoileffect.SetBool("recoil", true);
         }
         else
@@ -73,6 +82,13 @@ public class Weapon : MonoBehaviour
     {
         AmmoText.ammoAmount -= 1;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    void ShootUlitmate()
+    {
+        Instantiate(Ulti, firePoint.position, firePoint.rotation);
+        //Ultimate.Ult -= 0.03f;
+       
     }
 
     //void Granade()

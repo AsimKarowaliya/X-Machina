@@ -77,18 +77,22 @@ public class BlueBullet : MonoBehaviour
         else if (enemyMech != null)
         {
             enemyMech.TakeDamage(Damage);
+            Ultimate.Ult += 0.03f;
         }
         else if (enemyMelee != null)
         {
             enemyMelee.TakeDamage(Damage);
+            Ultimate.Ult += 0.03f;
         }
         else if (enemyfly != null)
         {
             enemyfly.TakeDamage(Damage);
+            Ultimate.Ult += 0.03f;
         }
         else if (groundMech != null)
         {
             groundMech.TakeDamage(Damage);
+            Ultimate.Ult += 0.03f;
         }
         else if (boss != null)
         {
