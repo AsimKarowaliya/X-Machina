@@ -62116,6 +62116,8 @@ MonoBehaviour:
   grenadeCount: 0
   grenadeMod: {fileID: 3998799034253514711, guid: 9c082b439f9d44541be5808646bd571e,
     type: 3}
+  maxActiveGrenade: 3
+  activeGrenadeCount: 0
   recoileffect: {fileID: 1714092841}
 --- !u!114 &999476377
 MonoBehaviour:
@@ -96485,7 +96487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118302715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4900002, y: -0.25000024, z: -10}
+  m_LocalPosition: {x: -3.4900005, y: -0.25000024, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 888304173}

@@ -30,6 +30,7 @@ public class Grenade : MonoBehaviour
     {
         exploded = false;
         grenadeBody.velocity = transform.right * force;
+        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(countdown());
     }
 
@@ -113,6 +114,7 @@ public class Grenade : MonoBehaviour
             sound.Play();
             grenadeCollider.enabled = false;
             spriteRenderer.enabled = false;
+            player.GetComponent<Weapon>().activeGrenadeCount -= 1;
         }
     }
 
@@ -127,14 +129,6 @@ public class Grenade : MonoBehaviour
     public void GoLeft()
     {
         goingLeft = true;
-    }
-    public void PrepareForDeath()
-    {
-        sound.clip = explodeSound;
-        sound.Play();
-        grenadeCollider.enabled = false;
-        spriteRenderer.enabled = false;
-        exploded = false;
     }
     IEnumerator countdown()
     {

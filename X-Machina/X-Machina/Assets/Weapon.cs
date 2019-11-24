@@ -14,7 +14,8 @@ public class Weapon : MonoBehaviour
     public GameObject grenadeMod;
     private GameObject grenade;
     private GameObject[] grenadeArr;
-    private int activeGrenadeCount = 0;
+    public int maxActiveGrenade;
+    public int activeGrenadeCount = 0;
     public Animator recoileffect;
 
     void Start()
@@ -37,7 +38,7 @@ public class Weapon : MonoBehaviour
         }
 
         //throwing grenade.
-        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0 && activeGrenadeCount < maxActiveGrenade)
         {
             grenade = Instantiate(grenadeMod, firePoint.position, firePoint.rotation);
             grenadeArr[activeGrenadeCount] = grenade;
@@ -65,7 +66,6 @@ public class Weapon : MonoBehaviour
                     grenadeArr[i] = null;
                 }
             }
-            activeGrenadeCount = 0;
         }
     }
 
