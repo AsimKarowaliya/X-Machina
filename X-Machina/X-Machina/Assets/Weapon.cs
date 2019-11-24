@@ -18,7 +18,6 @@ public class Weapon : MonoBehaviour
     public int maxActiveGrenade;
     public int activeGrenadeCount = 0;
     public Animator recoileffect;
-
   
     void Start()
     {
@@ -30,13 +29,16 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject ultsomthing = GameObject.FindGameObjectWithTag("ulttag");
+        Ultimate u = ultsomthing.GetComponent<Ultimate>();
+
         
         if (Input.GetButtonDown("Fire1") && AmmoText.ammoAmount > 0)
         {
             Shoot();
             recoileffect.SetBool("recoil", true);
         }
-        else if(Input.GetButtonDown("Fire3")&& Ultimate.Ult == 100f)
+        else if(Input.GetKeyDown(KeyCode.R) && u.Ult >= 0.3f)
         {
             ShootUlitmate();
             recoileffect.SetBool("recoil", true);
@@ -86,8 +88,10 @@ public class Weapon : MonoBehaviour
 
     void ShootUlitmate()
     {
+        GameObject ultsomthing = GameObject.FindGameObjectWithTag("ulttag");
+        Ultimate u = ultsomthing.GetComponent<Ultimate>();
         Instantiate(Ulti, firePoint.position, firePoint.rotation);
-        //Ultimate.Ult -= 0.03f;
+        u.Ult = 0;
        
     }
 

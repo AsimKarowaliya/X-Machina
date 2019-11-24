@@ -62111,7 +62111,7 @@ MonoBehaviour:
   firePoint: {fileID: 486157600}
   bulletPrefab: {fileID: 7492952611541031708, guid: 23241808ff2391145a49081d5c92be65,
     type: 3}
-  Ulti: {fileID: 7928348634837413126, guid: 63cf490253298b941b415c5387314009, type: 3}
+  Ulti: {fileID: 1230840684376020685, guid: 238d5701d2fb6a54292cecbb2c7ce9a0, type: 3}
   distance: 0.8
   maxGrenadeCount: 5
   grenadeCount: 0
@@ -96488,7 +96488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118302715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4900005, y: -0.25000024, z: -10}
+  m_LocalPosition: {x: -3.4900002, y: -0.25000024, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 888304173}
@@ -96719,6 +96719,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2118302717}
+    - target: {fileID: 3073515095054349340, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
+        type: 3}
+      propertyPath: m_TagString
+      value: ulttag
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3, type: 3}
 --- !u!114 &3537281704128201787 stripped

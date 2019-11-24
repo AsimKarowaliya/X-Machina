@@ -7,7 +7,7 @@ public class Ultimate : MonoBehaviour
 {
     Image Ultimates;
     float maxUlt = 0f;
-    public static float Ult;
+    public float Ult;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,6 @@ public class Ultimate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ultimates.fillAmount = Ult;
+        Ultimates.fillAmount = Ult/0.3f;
     }
 }

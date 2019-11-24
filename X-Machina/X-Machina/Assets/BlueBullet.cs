@@ -63,6 +63,9 @@ public class BlueBullet : MonoBehaviour
     //}
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
+        GameObject ultsomthing = GameObject.FindGameObjectWithTag("ulttag");
+        Ultimate u = ultsomthing.GetComponent<Ultimate>();
+
         Enemy enemy = hitInfo.gameObject.GetComponent<Enemy>();
         Patrol2 enemyMech = hitInfo.gameObject.GetComponent<Patrol2>();
         MeleeScript enemyMelee = hitInfo.gameObject.GetComponent<MeleeScript>();
@@ -77,22 +80,22 @@ public class BlueBullet : MonoBehaviour
         else if (enemyMech != null)
         {
             enemyMech.TakeDamage(Damage);
-            Ultimate.Ult += 0.03f;
+            u.Ult += 0.03f;
         }
         else if (enemyMelee != null)
         {
             enemyMelee.TakeDamage(Damage);
-            Ultimate.Ult += 0.03f;
+            u.Ult += 0.03f;
         }
         else if (enemyfly != null)
         {
             enemyfly.TakeDamage(Damage);
-            Ultimate.Ult += 0.03f;
+            u.Ult += 0.03f;
         }
         else if (groundMech != null)
         {
             groundMech.TakeDamage(Damage);
-            Ultimate.Ult += 0.03f;
+            u.Ult += 0.03f;
         }
         else if (boss != null)
         {
