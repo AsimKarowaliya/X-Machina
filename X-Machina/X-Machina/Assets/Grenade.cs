@@ -23,11 +23,13 @@ public class Grenade : MonoBehaviour
     private bool goingLeft = false;
     private bool goingRight = false;
     private bool exploded;
+    private Animator animator;
     public Rigidbody2D grenadeBody;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         exploded = false;
         grenadeBody.velocity = transform.right * force;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -44,6 +46,7 @@ public class Grenade : MonoBehaviour
         }
         if (suicide)
         {
+            animator.SetBool("Suicide", true);
             if (goingRight)
             {
                 transform.position += Vector3.right * Time.deltaTime * forwardSpeed;
