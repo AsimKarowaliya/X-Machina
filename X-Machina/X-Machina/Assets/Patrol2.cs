@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patrol2 : MonoBehaviour
 {
-    float speed = 1;
+    public float speed = 1;
     public float distance;
     private bool goingRight = true;
     public Transform target;
@@ -17,8 +17,15 @@ public class Patrol2 : MonoBehaviour
     public int health;
     public GameObject deathEffect;
     public int damage = 1;
+
+    private Color originColor;
     // Start is called before the first frame update
-    
+
+    private void Start()
+    {
+        originColor = GetComponent<SpriteRenderer>().color;
+    }
+
     void Update()
     {
         RaycastHit2D hitinfo = Physics2D.Raycast(firePoint.position, Vector2.right, shootDistance);
@@ -117,7 +124,7 @@ public class Patrol2 : MonoBehaviour
 
     void ResetMat()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<SpriteRenderer>().color = originColor;
     }
     //void OnTriggerEnter2D(Collider2D coll)
     //{

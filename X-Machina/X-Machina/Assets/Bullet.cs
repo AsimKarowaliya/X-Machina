@@ -57,11 +57,11 @@ public class Bullet : MonoBehaviour
             HealthSystem health = hitInfo.gameObject.GetComponent<HealthSystem>();
             if (health.ShieldHealth != 0)
             {
-                health.ShieldHealth -= 1;
+                health.ShieldHealth -= Damage;
             }
             else if (health.ShieldHealth == 0)
             {
-                health.playerHealth -= 1;
+                health.playerHealth -= Damage;
             }
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
