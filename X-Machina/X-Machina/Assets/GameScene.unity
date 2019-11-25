@@ -62149,6 +62149,7 @@ MonoBehaviour:
   FullBlueHearts: {fileID: 21300000, guid: ca245079190eae14c90334db045e3cf5, type: 3}
   emptyHearts: {fileID: 21300000, guid: f36ceb83417f5c24ea9a6355e9cc500a, type: 3}
   gameoverMenu: {fileID: 648387362}
+  pauseMenu: {fileID: 3537281704128201790}
 --- !u!114 &999476378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96719,11 +96720,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2118302717}
-    - target: {fileID: 3073515095054349340, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
+    - target: {fileID: 6832446971327910251, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
         type: 3}
-      propertyPath: m_TagString
-      value: ulttag
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6788601371550820261, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 3537281704128201790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3, type: 3}
 --- !u!114 &3537281704128201787 stripped
@@ -96762,6 +96768,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3537281704128201790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6832446971327910251, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3537281704128201786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5465565197116558362
 PrefabInstance:
   m_ObjectHideFlags: 0

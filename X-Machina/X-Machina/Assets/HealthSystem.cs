@@ -17,6 +17,7 @@ public class HealthSystem : MonoBehaviour
     public Sprite emptyHearts;
 
     public GameObject gameoverMenu;
+    public GameObject pauseMenu;
     void Update()
     {
 
@@ -83,6 +84,12 @@ public class HealthSystem : MonoBehaviour
             //Death effect
             //Invoke end screen function after few seconds 
             
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
         }
 
     }
