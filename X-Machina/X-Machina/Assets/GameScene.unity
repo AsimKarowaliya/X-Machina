@@ -96720,16 +96720,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2118302717}
-    - target: {fileID: 6832446971327910251, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788601371550820261, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 3537281704128201790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2b1aa60e4e0643ab45dc5fcd5a7b3, type: 3}
 --- !u!114 &3537281704128201787 stripped
