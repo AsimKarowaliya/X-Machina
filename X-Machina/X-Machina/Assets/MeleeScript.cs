@@ -12,8 +12,12 @@ public class MeleeScript : MonoBehaviour
     public int damage;
     public GameObject deathEffect;
     private Rigidbody2D rb;
+    private Color originColor;
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        originColor = GetComponent<SpriteRenderer>().color;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -65,7 +69,7 @@ public class MeleeScript : MonoBehaviour
 
     void ResetMat()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<SpriteRenderer>().color = originColor;
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
