@@ -31,7 +31,7 @@ public class Player_Hit_Effect : MonoBehaviour
     IEnumerator immune()
     {
         Physics2D.IgnoreLayerCollision(9, 12, true);
-        yield return new WaitForSecondsRealtime(1.0f);
+        yield return new WaitForSecondsRealtime(1.5f);
         Physics2D.IgnoreLayerCollision(9, 12, false);
     }
 }

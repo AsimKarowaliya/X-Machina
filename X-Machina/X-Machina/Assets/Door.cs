@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    public string sceneToLoad;
     public GameObject actionTips;
+    public GameObject doorExit;
+    public GameObject boss;
     private GameObject at;
     private Vector3 tipPos;
 
@@ -16,6 +17,7 @@ public class Door : MonoBehaviour
         tipPos = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
         at = Instantiate(actionTips, tipPos, transform.rotation);
         at.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        boss.SetActive(false);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -25,7 +27,8 @@ public class Door : MonoBehaviour
             at.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
             if (Input.GetKeyDown(KeyCode.O))
             {
-                SceneManager.LoadScene(sceneToLoad);
+                other.transform.position = doorExit.transform.position;
+                boss.SetActive(true);
             }
         }
     }
