@@ -24,7 +24,7 @@ public class jumpback : StateMachineBehaviour
     {
         //boss1.rb.velocity = new Vector2(speed, jumpPower);
         high = playerPos.position.y - animator.transform.position.y;
-        if(high<0.5)
+        if(high<2)
             animator.SetBool("Jump", false);
 
     }
