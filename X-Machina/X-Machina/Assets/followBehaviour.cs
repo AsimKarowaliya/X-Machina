@@ -43,7 +43,7 @@ public class followBehaviour : StateMachineBehaviour
            // timebetweenattack += Time.deltaTime;
             number++;
         }
-        if ( number > 0)
+        if ( number > 0 || animator.GetBool("boss70%"))
         {
             timebetweenattack += Time.deltaTime;
             if (timebetweenattack > durTime)
