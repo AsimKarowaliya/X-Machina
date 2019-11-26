@@ -11,24 +11,29 @@ public class BossAI : MonoBehaviour
     public float startTime;
     private Animator Anim;
     private float Speed;
-    private int count=0;
+    private int count = 0;
     public int health;
     public int healthCopy;
     public GameObject Bullet;
     public Transform fire;
-    private bool goingLeft  = true;
+    private bool goingLeft = true;
     public Rigidbody2D rb;
     private Transform playerPos; //posiation
     private Transform boss;
     public float distance;
     public float high;
     public GameObject deathEffect;
-    private int number=0;
+    public GameObject VS;
+    private int number = 0;
     private int number1 = 0;
     BossBoom boom;
+    SpriteRenderer r;
+    followBehaviour rr;
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
+        r = gameObject.GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
         healthCopy = health;
@@ -43,37 +48,50 @@ public class BossAI : MonoBehaviour
         action();
         if (health <= 0)
         {
-            
+
             Die();
         }
     }
 
     void action()
     {
-        
+  
         //Debug.Log(a.distance);
         distance = boss.position.x - playerPos.position.x;
         high = playerPos.position.y - boss.position.y;
         if (distance <= -0.01f)
-                {
+        {
             if (goingLeft == false)
                 fire.transform.Rotate(0f, 180f, 0f);
             goingLeft = true;
 
             transform.localScale = new Vector3(1f, 1f, 1f);
-            
-            //goingLeft = true;
+
+            if (health <= 0.7 * healthCopy)
+            {
+                if (number == 0)
+                {
+                    Anim.SetBool("boss70%", true);
+                    r.color = new Color(1f, 0.8f, 1f, 1f);
+                    number++;
+                }
+                else if (number == 1 && health <= 0.3 * healthCopy)
+                {
+                    Anim.SetBool("boss30%", true);
+                    r.color = new Color(1f, 0.6f, 1f, 1f);
+                }
+            }
         }
         else if (distance >= 0.01f)
         {
-            if (goingLeft==true)
+            if (goingLeft == true)
                 fire.transform.Rotate(0f, 180f, 0f);
             goingLeft = false;
             transform.localScale = new Vector3(-1f, 1f, 1f);
-           
+
             // goingLeft = false;
         }
-        
+
 
 
 
@@ -83,7 +101,7 @@ public class BossAI : MonoBehaviour
         if (distance <= -0.01f)
         {
             deathEffect.transform.localScale = new Vector3(2.4f, 2.4f, 1f);
-           
+
         }
         else if (distance >= 0.01f)
         {
@@ -98,14 +116,14 @@ public class BossAI : MonoBehaviour
     }
     private void Flip()
     {
-        if(goingLeft==true)
-            fire.transform.Rotate(0f,180f,0f);
+        if (goingLeft == true)
+            fire.transform.Rotate(0f, 180f, 0f);
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
         rand = Random.Range(0, 2);
-        movespeed= Random.Range(2, 6);
-        int jumphigh = Random.Range(3, 12);
+        movespeed = Random.Range(2, 6);
+        int jumphigh = Random.Range(8, 15);
         if (playerPos.position.x > 76.8 || number1 > 0)
         {
             if (health > 0.7 * healthCopy)
@@ -113,7 +131,7 @@ public class BossAI : MonoBehaviour
                 number1++;
                 if (rand == 0)
                 {
-                    if (System.Math.Abs(high) > 1.5)
+                    if (high > 0.5f)
                     {
                         if (distance <= -0.01f)
                         {
@@ -136,13 +154,13 @@ public class BossAI : MonoBehaviour
                         if (distance <= -0.01f)
                         {
                             Anim.SetBool("runing", true);
-                            rb.velocity = new Vector2(5f, rb.velocity.y);
+                            rb.velocity = new Vector2(6f, rb.velocity.y);
                             //Anim.SetBool("runing", false);
                         }
                         else if (distance >= 0.01f)
                         {
                             Anim.SetBool("runing", true);
-                            rb.velocity = new Vector2(-5f, rb.velocity.y);
+                            rb.velocity = new Vector2(-6f, rb.velocity.y);
                             //Anim.SetBool("runing", false);
                         }
                     }
@@ -151,18 +169,10 @@ public class BossAI : MonoBehaviour
             else if (health <= 0.7 * healthCopy)
             {
 
-                if (number == 0)
-                {
-                    Anim.SetBool("boss70%", true);
-                    number++;
-                }
-                else if (number == 1 && health <= 0.3 * healthCopy)
-                {
-                    Anim.SetBool("boss30%", true);
-                }
 
 
-                if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0") && System.Math.Abs(distance) > 4)
+
+                if (Anim.GetCurrentAnimatorStateInfo(0).IsName("BossMove 0") && System.Math.Abs(distance) > 2)
                 {
                     Shoot();
                 }
@@ -187,7 +197,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 0)
                 {
-                    if (System.Math.Abs(high) > 1.5)
+                    if (high > 1.5)
                     {
                         if (distance <= -0.01f)
                         {
@@ -205,7 +215,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 1)
                 {
-                    if (System.Math.Abs(distance) > 2)
+                    if (System.Math.Abs(distance) > 1)
                     {
                         if (distance <= -0.01f)
                         {
@@ -218,6 +228,7 @@ public class BossAI : MonoBehaviour
                             Anim.SetBool("runing", true);
                             rb.velocity = new Vector2(-7f, rb.velocity.y);
                             //Anim.SetBool("runing", false);
+
                         }
                     }
 
@@ -238,13 +249,13 @@ public class BossAI : MonoBehaviour
             }
         }
         if (coll.gameObject.CompareTag("Bullet"))
-        {          
+        {
             GetComponent<SpriteRenderer>().color = Color.red;
             Invoke("ResetMat", 0.05f);
         }
 
-       
-        
+
+
     }
     void Shoot()
     {
