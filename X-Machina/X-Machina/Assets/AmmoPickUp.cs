@@ -12,7 +12,6 @@ public class AmmoPickUp : GrenadeAmmo
         if (collision.CompareTag("Ammo"))
         {
             AmmoText.ammoAmount += 10;
-            GrenadeAmmo.ammoAmount += 1;
             w.grenadeCount += 1;
           
             Destroy(collision.gameObject);

@@ -12,7 +12,7 @@ public class Player_Hit_Effect : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
        
-        if (coll.gameObject.tag == ("Bullet") || coll.gameObject.tag == ("Enemy") || coll.gameObject.tag == ("Boss1"))
+        if (coll.gameObject.tag == ("Bullet") || coll.gameObject.tag == ("Enemy"))
         {
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
