@@ -6,12 +6,13 @@ public class playONj : MonoBehaviour
 {
 
     public AudioSource jp;
-
+    int ammo;
     // Update is called once per frame
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        ammo = AmmoText.ammoAmount;
+        if (Input.GetKeyDown(KeyCode.J) && ammo > 0)
         {
             jp.Play();
         }
