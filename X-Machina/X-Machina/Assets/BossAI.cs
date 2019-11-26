@@ -149,7 +149,7 @@ public class BossAI : MonoBehaviour
                 }
                 else if (rand == 1)
                 {
-                    if (System.Math.Abs(distance) > 1)
+                    if (System.Math.Abs(distance) > 1.5f)
                     {
                         if (distance <= -0.01f)
                         {
