@@ -6,16 +6,14 @@ using UnityEngine.UI;
 public class GrenadeAmmo : MonoBehaviour
 {
     public Text text1;
-
+    public static int ammoAmount = 5;
     // Update is called once per frame
     void Update()
     {
-        GameObject playa = GameObject.Find("Player");
-        Weapon w = playa.GetComponent<Weapon>();
 
-        if (w.grenadeCount > 0)
+        if (ammoAmount > 0)
         {
-            text1.text = ("X " + w.grenadeCount);
+            text1.text = ("X " + ammoAmount);
         }
         else
         {

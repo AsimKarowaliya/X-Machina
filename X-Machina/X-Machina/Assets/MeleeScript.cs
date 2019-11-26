@@ -9,6 +9,7 @@ public class MeleeScript : MonoBehaviour
     private bool goingRight = true;
     public Transform target;
     public int health;
+    public int damage;
     public GameObject deathEffect;
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -74,10 +75,10 @@ public class MeleeScript : MonoBehaviour
             HealthSystem health = coll.gameObject.GetComponent<HealthSystem>();
             if(health.ShieldHealth != 0)
             {
-                health.ShieldHealth -= 1;
+                health.ShieldHealth -= damage;
             }else if (health.ShieldHealth == 0)
             {
-                health.playerHealth -= 1;
+                health.playerHealth -= damage;
             }
         }
         if (coll.gameObject.CompareTag("BlueBullet"))

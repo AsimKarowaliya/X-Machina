@@ -36,7 +36,7 @@ public class followBehaviour : StateMachineBehaviour
         //194
         if (playerPos.position.x > 194 && number == 0 && !animator.GetBool("boss70%"))
         {
-            playerPos.position = new Vector2(160, -35);
+            //playerPos.position = new Vector2(160, -35);
            
            //Time.timeScale = 0.5f;
            // VS.SetActive(true);
