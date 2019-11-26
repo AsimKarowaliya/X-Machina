@@ -55,6 +55,7 @@ public class Weapon : MonoBehaviour
             grenadeArr[activeGrenadeCount] = grenade;
             activeGrenadeCount += 1;
             grenadeCount -= 1;
+            GrenadeAmmo.ammoAmount -= 1;
         }
 
         if(Input.GetKeyDown(KeyCode.T))

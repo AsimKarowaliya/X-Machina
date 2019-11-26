@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        //DontDestroyOnLoad(this);
         playerLayer = LayerMask.NameToLayer("Player");
         platformLayer = LayerMask.NameToLayer("Platform");
     }
