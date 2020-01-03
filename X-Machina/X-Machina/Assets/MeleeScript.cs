@@ -90,7 +90,7 @@ public class MeleeScript : MonoBehaviour
             //Instantiate(DeathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
             GetComponent<SpriteRenderer>().color = Color.red;
-            Invoke("ResetMat", 0.05f);
+            Invoke("ResetMat", 0.5f);
             // HealthSystem SN = coll.GetComponent<HealthSystem>();
             // SN.playerHealth -= 1;
         }
